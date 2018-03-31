@@ -7,7 +7,6 @@ import java.util.Date;
 @Entity
 @Table(name="BLAZ_AP_CU_PBOC_BASIC_INFO")
 public class BlazApCuPbocBasicInfo {
-
     private String REPORT_ID;
     private String CERTYPE;
     private String CERCODE;
@@ -30,8 +29,8 @@ public class BlazApCuPbocBasicInfo {
     private Integer BAD_DEBTS_NUM;
     private Integer ASSETS_NUM;
     private Integer SPONSORIAL_NUM;
-    private Double BAD_DEBTS_REMAIN;
-    private Double ASSETS_REMAIN;
+    private Integer BAD_DEBTS_REMAIN;
+    private Integer ASSETS_REMAIN;
     private Integer SPONSORIAL_REMAIN;
     private Integer LOAD_OVERDUE_NUM;
     private Integer CREDIT_OVERDUE_ACCOUNTS;
@@ -39,37 +38,37 @@ public class BlazApCuPbocBasicInfo {
     private Integer LOAD_OVERDUE_MONTHS;
     private Integer CREDIT_OVERDUE_MONTHS;
     private Integer NEARCREDIT_60D_MONTHS;
-    private Double LOAD_OVERDUE_MAX_SUM;
-    private Double CREDIT_OVERDUE_MAX_SUM;
-    private Double NEARCREDIT_60D_MAX_SUM;
+    private Integer LOAD_OVERDUE_MAX_SUM;
+    private Integer CREDIT_OVERDUE_MAX_SUM;
+    private Integer NEARCREDIT_60D_MAX_SUM;
     private Integer LOAD_OVERDUE_MAX_MONTH;
     private Integer CREDIT_OVERDUE_MAX_MONTH;
     private Integer NEARCREDIT_60D_MAX_MONTH;
     private Integer LOAD_CORPORATION_NUM;
     private Integer LOAD_ORGANIZATION_NUM;
     private Integer LOAD_NUM;
-    private Double LOAD_CONTRACT_SUM;
-    private Double LOAD_REMAIN;
-    private Double LOAD_LAST6M_REPAY;
+    private Integer LOAD_CONTRACT_SUM;
+    private Integer LOAD_REMAIN;
+    private Integer LOAD_LAST6M_REPAY;
     private Integer CRED_ISSUING_CORPORATION_NUM;
     private Integer CRED_ISSUING_ORGANIZATION_NUM;
     private Integer CRED_ACCOUNTS;
-    private Double CRED_EXTENSION_SUM;
-    private Double CRED_SINGLE_MAX_EXTENSION;
-    private Double CRED_SINGLE_MIN_EXTENSION;
-    private Double CRED_USED_EXTENSION;
-    private Double CRED_LAST6M_AVG_USEDEXTENSION;
+    private Integer CRED_EXTENSION_SUM;
+    private Integer CRED_SINGLE_MAX_EXTENSION;
+    private Integer CRED_SINGLE_MIN_EXTENSION;
+    private Integer CRED_USED_EXTENSION;
+    private Integer CRED_LAST6M_AVG_USEDEXTENSION;
     private Integer SCRED_ISSUING_CORPORATION_NUM;
     private Integer SCRED_ISSUING_ORGANIZATION_NUM;
     private Integer SCRED_ACCOUNTS;
-    private Double SCRED_EXTENSION_SUM;
-    private Double SCRED_SINGLE_MAX_EXTENSION;
-    private Double SCRED_SINGLE_MIN_EXTENSION;
-    private Double SCRED_USED_EXTENSION;
-    private Double SCRED_LAST6M_AVG_USEDEXTENSION;
+    private Integer SCRED_EXTENSION_SUM;
+    private Integer SCRED_SINGLE_MAX_EXTENSION;
+    private Integer SCRED_SINGLE_MIN_EXTENSION;
+    private Integer SCRED_USED_EXTENSION;
+    private Integer SCRED_LAST6M_AVG_USEDEXTENSION;
     private Integer SECURED_NUM;
-    private Double SECERED_MONEY;
-    private Double SECERED_CAPITAL;
+    private Integer SECERED_MONEY;
+    private Integer SECERED_CAPITAL;
 
     public String getREPORT_ID() {
         return REPORT_ID;
@@ -247,19 +246,19 @@ public class BlazApCuPbocBasicInfo {
         this.SPONSORIAL_NUM = SPONSORIAL_NUM;
     }
 
-    public Double getBAD_DEBTS_REMAIN() {
+    public Integer getBAD_DEBTS_REMAIN() {
         return BAD_DEBTS_REMAIN;
     }
 
-    public void setBAD_DEBTS_REMAIN(Double BAD_DEBTS_REMAIN) {
+    public void setBAD_DEBTS_REMAIN(Integer BAD_DEBTS_REMAIN) {
         this.BAD_DEBTS_REMAIN = BAD_DEBTS_REMAIN;
     }
 
-    public Double getASSETS_REMAIN() {
+    public Integer getASSETS_REMAIN() {
         return ASSETS_REMAIN;
     }
 
-    public void setASSETS_REMAIN(Double ASSETS_REMAIN) {
+    public void setASSETS_REMAIN(Integer ASSETS_REMAIN) {
         this.ASSETS_REMAIN = ASSETS_REMAIN;
     }
 
@@ -319,27 +318,27 @@ public class BlazApCuPbocBasicInfo {
         this.NEARCREDIT_60D_MONTHS = NEARCREDIT_60D_MONTHS;
     }
 
-    public Double getLOAD_OVERDUE_MAX_SUM() {
+    public Integer getLOAD_OVERDUE_MAX_SUM() {
         return LOAD_OVERDUE_MAX_SUM;
     }
 
-    public void setLOAD_OVERDUE_MAX_SUM(Double LOAD_OVERDUE_MAX_SUM) {
+    public void setLOAD_OVERDUE_MAX_SUM(Integer LOAD_OVERDUE_MAX_SUM) {
         this.LOAD_OVERDUE_MAX_SUM = LOAD_OVERDUE_MAX_SUM;
     }
 
-    public Double getCREDIT_OVERDUE_MAX_SUM() {
+    public Integer getCREDIT_OVERDUE_MAX_SUM() {
         return CREDIT_OVERDUE_MAX_SUM;
     }
 
-    public void setCREDIT_OVERDUE_MAX_SUM(Double CREDIT_OVERDUE_MAX_SUM) {
+    public void setCREDIT_OVERDUE_MAX_SUM(Integer CREDIT_OVERDUE_MAX_SUM) {
         this.CREDIT_OVERDUE_MAX_SUM = CREDIT_OVERDUE_MAX_SUM;
     }
 
-    public Double getNEARCREDIT_60D_MAX_SUM() {
+    public Integer getNEARCREDIT_60D_MAX_SUM() {
         return NEARCREDIT_60D_MAX_SUM;
     }
 
-    public void setNEARCREDIT_60D_MAX_SUM(Double NEARCREDIT_60D_MAX_SUM) {
+    public void setNEARCREDIT_60D_MAX_SUM(Integer NEARCREDIT_60D_MAX_SUM) {
         this.NEARCREDIT_60D_MAX_SUM = NEARCREDIT_60D_MAX_SUM;
     }
 
@@ -391,27 +390,27 @@ public class BlazApCuPbocBasicInfo {
         this.LOAD_NUM = LOAD_NUM;
     }
 
-    public Double getLOAD_CONTRACT_SUM() {
+    public Integer getLOAD_CONTRACT_SUM() {
         return LOAD_CONTRACT_SUM;
     }
 
-    public void setLOAD_CONTRACT_SUM(Double LOAD_CONTRACT_SUM) {
+    public void setLOAD_CONTRACT_SUM(Integer LOAD_CONTRACT_SUM) {
         this.LOAD_CONTRACT_SUM = LOAD_CONTRACT_SUM;
     }
 
-    public Double getLOAD_REMAIN() {
+    public Integer getLOAD_REMAIN() {
         return LOAD_REMAIN;
     }
 
-    public void setLOAD_REMAIN(Double LOAD_REMAIN) {
+    public void setLOAD_REMAIN(Integer LOAD_REMAIN) {
         this.LOAD_REMAIN = LOAD_REMAIN;
     }
 
-    public Double getLOAD_LAST6M_REPAY() {
+    public Integer getLOAD_LAST6M_REPAY() {
         return LOAD_LAST6M_REPAY;
     }
 
-    public void setLOAD_LAST6M_REPAY(Double LOAD_LAST6M_REPAY) {
+    public void setLOAD_LAST6M_REPAY(Integer LOAD_LAST6M_REPAY) {
         this.LOAD_LAST6M_REPAY = LOAD_LAST6M_REPAY;
     }
 
@@ -439,43 +438,43 @@ public class BlazApCuPbocBasicInfo {
         this.CRED_ACCOUNTS = CRED_ACCOUNTS;
     }
 
-    public Double getCRED_EXTENSION_SUM() {
+    public Integer getCRED_EXTENSION_SUM() {
         return CRED_EXTENSION_SUM;
     }
 
-    public void setCRED_EXTENSION_SUM(Double CRED_EXTENSION_SUM) {
+    public void setCRED_EXTENSION_SUM(Integer CRED_EXTENSION_SUM) {
         this.CRED_EXTENSION_SUM = CRED_EXTENSION_SUM;
     }
 
-    public Double getCRED_SINGLE_MAX_EXTENSION() {
+    public Integer getCRED_SINGLE_MAX_EXTENSION() {
         return CRED_SINGLE_MAX_EXTENSION;
     }
 
-    public void setCRED_SINGLE_MAX_EXTENSION(Double CRED_SINGLE_MAX_EXTENSION) {
+    public void setCRED_SINGLE_MAX_EXTENSION(Integer CRED_SINGLE_MAX_EXTENSION) {
         this.CRED_SINGLE_MAX_EXTENSION = CRED_SINGLE_MAX_EXTENSION;
     }
 
-    public Double getCRED_SINGLE_MIN_EXTENSION() {
+    public Integer getCRED_SINGLE_MIN_EXTENSION() {
         return CRED_SINGLE_MIN_EXTENSION;
     }
 
-    public void setCRED_SINGLE_MIN_EXTENSION(Double CRED_SINGLE_MIN_EXTENSION) {
+    public void setCRED_SINGLE_MIN_EXTENSION(Integer CRED_SINGLE_MIN_EXTENSION) {
         this.CRED_SINGLE_MIN_EXTENSION = CRED_SINGLE_MIN_EXTENSION;
     }
 
-    public Double getCRED_USED_EXTENSION() {
+    public Integer getCRED_USED_EXTENSION() {
         return CRED_USED_EXTENSION;
     }
 
-    public void setCRED_USED_EXTENSION(Double CRED_USED_EXTENSION) {
+    public void setCRED_USED_EXTENSION(Integer CRED_USED_EXTENSION) {
         this.CRED_USED_EXTENSION = CRED_USED_EXTENSION;
     }
 
-    public Double getCRED_LAST6M_AVG_USEDEXTENSION() {
+    public Integer getCRED_LAST6M_AVG_USEDEXTENSION() {
         return CRED_LAST6M_AVG_USEDEXTENSION;
     }
 
-    public void setCRED_LAST6M_AVG_USEDEXTENSION(Double CRED_LAST6M_AVG_USEDEXTENSION) {
+    public void setCRED_LAST6M_AVG_USEDEXTENSION(Integer CRED_LAST6M_AVG_USEDEXTENSION) {
         this.CRED_LAST6M_AVG_USEDEXTENSION = CRED_LAST6M_AVG_USEDEXTENSION;
     }
 
@@ -503,43 +502,43 @@ public class BlazApCuPbocBasicInfo {
         this.SCRED_ACCOUNTS = SCRED_ACCOUNTS;
     }
 
-    public Double getSCRED_EXTENSION_SUM() {
+    public Integer getSCRED_EXTENSION_SUM() {
         return SCRED_EXTENSION_SUM;
     }
 
-    public void setSCRED_EXTENSION_SUM(Double SCRED_EXTENSION_SUM) {
+    public void setSCRED_EXTENSION_SUM(Integer SCRED_EXTENSION_SUM) {
         this.SCRED_EXTENSION_SUM = SCRED_EXTENSION_SUM;
     }
 
-    public Double getSCRED_SINGLE_MAX_EXTENSION() {
+    public Integer getSCRED_SINGLE_MAX_EXTENSION() {
         return SCRED_SINGLE_MAX_EXTENSION;
     }
 
-    public void setSCRED_SINGLE_MAX_EXTENSION(Double SCRED_SINGLE_MAX_EXTENSION) {
+    public void setSCRED_SINGLE_MAX_EXTENSION(Integer SCRED_SINGLE_MAX_EXTENSION) {
         this.SCRED_SINGLE_MAX_EXTENSION = SCRED_SINGLE_MAX_EXTENSION;
     }
 
-    public Double getSCRED_SINGLE_MIN_EXTENSION() {
+    public Integer getSCRED_SINGLE_MIN_EXTENSION() {
         return SCRED_SINGLE_MIN_EXTENSION;
     }
 
-    public void setSCRED_SINGLE_MIN_EXTENSION(Double SCRED_SINGLE_MIN_EXTENSION) {
+    public void setSCRED_SINGLE_MIN_EXTENSION(Integer SCRED_SINGLE_MIN_EXTENSION) {
         this.SCRED_SINGLE_MIN_EXTENSION = SCRED_SINGLE_MIN_EXTENSION;
     }
 
-    public Double getSCRED_USED_EXTENSION() {
+    public Integer getSCRED_USED_EXTENSION() {
         return SCRED_USED_EXTENSION;
     }
 
-    public void setSCRED_USED_EXTENSION(Double SCRED_USED_EXTENSION) {
+    public void setSCRED_USED_EXTENSION(Integer SCRED_USED_EXTENSION) {
         this.SCRED_USED_EXTENSION = SCRED_USED_EXTENSION;
     }
 
-    public Double getSCRED_LAST6M_AVG_USEDEXTENSION() {
+    public Integer getSCRED_LAST6M_AVG_USEDEXTENSION() {
         return SCRED_LAST6M_AVG_USEDEXTENSION;
     }
 
-    public void setSCRED_LAST6M_AVG_USEDEXTENSION(Double SCRED_LAST6M_AVG_USEDEXTENSION) {
+    public void setSCRED_LAST6M_AVG_USEDEXTENSION(Integer SCRED_LAST6M_AVG_USEDEXTENSION) {
         this.SCRED_LAST6M_AVG_USEDEXTENSION = SCRED_LAST6M_AVG_USEDEXTENSION;
     }
 
@@ -551,19 +550,19 @@ public class BlazApCuPbocBasicInfo {
         this.SECURED_NUM = SECURED_NUM;
     }
 
-    public Double getSECERED_MONEY() {
+    public Integer getSECERED_MONEY() {
         return SECERED_MONEY;
     }
 
-    public void setSECERED_MONEY(Double SECERED_MONEY) {
+    public void setSECERED_MONEY(Integer SECERED_MONEY) {
         this.SECERED_MONEY = SECERED_MONEY;
     }
 
-    public Double getSECERED_CAPITAL() {
+    public Integer getSECERED_CAPITAL() {
         return SECERED_CAPITAL;
     }
 
-    public void setSECERED_CAPITAL(Double SECERED_CAPITAL) {
+    public void setSECERED_CAPITAL(Integer SECERED_CAPITAL) {
         this.SECERED_CAPITAL = SECERED_CAPITAL;
     }
 }

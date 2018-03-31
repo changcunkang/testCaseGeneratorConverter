@@ -11,7 +11,7 @@ public class BlazApCu5YearsOverdue {
     private String F_ID;
     private String OVERDUE_MONTH;
     private Integer OVERDUE_MONTHS;
-    private Double OVERDUE_AMOUNT;
+    private Integer OVERDUE_AMOUNT;
     private String REPORT_ID;
 
     public String getP_ID() {
@@ -46,11 +46,11 @@ public class BlazApCu5YearsOverdue {
         this.OVERDUE_MONTHS = OVERDUE_MONTHS;
     }
 
-    public Double getOVERDUE_AMOUNT() {
+    public Integer getOVERDUE_AMOUNT() {
         return OVERDUE_AMOUNT;
     }
 
-    public void setOVERDUE_AMOUNT(Double OVERDUE_AMOUNT) {
+    public void setOVERDUE_AMOUNT(Integer OVERDUE_AMOUNT) {
         this.OVERDUE_AMOUNT = OVERDUE_AMOUNT;
     }
 

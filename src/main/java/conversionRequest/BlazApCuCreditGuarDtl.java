@@ -11,10 +11,10 @@ public class BlazApCuCreditGuarDtl {
     private String F_ID;
     private String SN;
     private String ORGANIZATION;
-    private Double CONTRACT_AMOUNT;
+    private Integer CONTRACT_AMOUNT;
     private Date ISSUE_DATE;
-    private Double BONDS_AMOUNT;
-    private Double USED_AMOUNT;
+    private Integer BONDS_AMOUNT;
+    private Integer USED_AMOUNT;
     private Date BILL_DATE;
 
     public String getP_ID() {
@@ -49,11 +49,11 @@ public class BlazApCuCreditGuarDtl {
         this.ORGANIZATION = ORGANIZATION;
     }
 
-    public Double getCONTRACT_AMOUNT() {
+    public Integer getCONTRACT_AMOUNT() {
         return CONTRACT_AMOUNT;
     }
 
-    public void setCONTRACT_AMOUNT(Double CONTRACT_AMOUNT) {
+    public void setCONTRACT_AMOUNT(Integer CONTRACT_AMOUNT) {
         this.CONTRACT_AMOUNT = CONTRACT_AMOUNT;
     }
 
@@ -65,19 +65,19 @@ public class BlazApCuCreditGuarDtl {
         this.ISSUE_DATE = ISSUE_DATE;
     }
 
-    public Double getBONDS_AMOUNT() {
+    public Integer getBONDS_AMOUNT() {
         return BONDS_AMOUNT;
     }
 
-    public void setBONDS_AMOUNT(Double BONDS_AMOUNT) {
+    public void setBONDS_AMOUNT(Integer BONDS_AMOUNT) {
         this.BONDS_AMOUNT = BONDS_AMOUNT;
     }
 
-    public Double getUSED_AMOUNT() {
+    public Integer getUSED_AMOUNT() {
         return USED_AMOUNT;
     }
 
-    public void setUSED_AMOUNT(Double USED_AMOUNT) {
+    public void setUSED_AMOUNT(Integer USED_AMOUNT) {
         this.USED_AMOUNT = USED_AMOUNT;
     }
 

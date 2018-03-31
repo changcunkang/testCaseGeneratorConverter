@@ -13,9 +13,9 @@ public class BlazApCuSponsorialDtl {
     private String SN;
     private String SPONSORIAL_ORGANIZATION;
     private Date REPLACE_REPAY_DATE;
-    private Double REPLACE_REPAY_SUM;
+    private Integer REPLACE_REPAY_SUM;
     private Date LAST_REPAY_DATE;
-    private Double REMAIN;
+    private Integer REMAIN;
 
     public String getP_ID() {
         return P_ID;
@@ -57,11 +57,11 @@ public class BlazApCuSponsorialDtl {
         this.REPLACE_REPAY_DATE = REPLACE_REPAY_DATE;
     }
 
-    public Double getREPLACE_REPAY_SUM() {
+    public Integer getREPLACE_REPAY_SUM() {
         return REPLACE_REPAY_SUM;
     }
 
-    public void setREPLACE_REPAY_SUM(Double REPLACE_REPAY_SUM) {
+    public void setREPLACE_REPAY_SUM(Integer REPLACE_REPAY_SUM) {
         this.REPLACE_REPAY_SUM = REPLACE_REPAY_SUM;
     }
 
@@ -73,11 +73,11 @@ public class BlazApCuSponsorialDtl {
         this.LAST_REPAY_DATE = LAST_REPAY_DATE;
     }
 
-    public Double getREMAIN() {
+    public Integer getREMAIN() {
         return REMAIN;
     }
 
-    public void setREMAIN(Double REMAIN) {
+    public void setREMAIN(Integer REMAIN) {
         this.REMAIN = REMAIN;
     }
 }

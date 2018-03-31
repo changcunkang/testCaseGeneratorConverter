@@ -15,7 +15,7 @@ public class CardMdCycAcctJy {
     private String TRANS_TYPE_CODE;
     private String TRANS_TYPE;
     private Integer TRANS_CNT;
-    private Double TRANS_AMT;
+    private Integer TRANS_AMT;
     private Date MYETL_DATE;
 
     public String getXACCOUNT() {
@@ -74,12 +74,11 @@ public class CardMdCycAcctJy {
         this.TRANS_CNT = TRANS_CNT;
     }
 
-
-    public Double getTRANS_AMT() {
+    public Integer getTRANS_AMT() {
         return TRANS_AMT;
     }
 
-    public void setTRANS_AMT(Double TRANS_AMT) {
+    public void setTRANS_AMT(Integer TRANS_AMT) {
         this.TRANS_AMT = TRANS_AMT;
     }
 

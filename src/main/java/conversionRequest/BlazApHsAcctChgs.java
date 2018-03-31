@@ -15,12 +15,12 @@ public class BlazApHsAcctChgs {
     private Integer APP_LIMIT;
     private Integer APP_LIMIT_RLT;
     private String CHGA_TYPE;
-    private Integer LIMIT_CHWAY;
+    private String LIMIT_CHWAY;
     private Integer LIMIT_T;
-    private Integer CHGA_DATE;
+    private Date CHGA_DATE;
     private Integer CHGA_AFTER_VALUE;
     private Integer CHGA_BEG_DT;
-    private Integer CHGA_END_DT;
+    private Date CHGA_END_DT;
     private Integer CHGA_BEFOR_VALUE;
     private Date MYETL_DATE;
 
@@ -88,11 +88,11 @@ public class BlazApHsAcctChgs {
         this.CHGA_TYPE = CHGA_TYPE;
     }
 
-    public Integer getLIMIT_CHWAY() {
+    public String getLIMIT_CHWAY() {
         return LIMIT_CHWAY;
     }
 
-    public void setLIMIT_CHWAY(Integer LIMIT_CHWAY) {
+    public void setLIMIT_CHWAY(String LIMIT_CHWAY) {
         this.LIMIT_CHWAY = LIMIT_CHWAY;
     }
 
@@ -104,11 +104,11 @@ public class BlazApHsAcctChgs {
         this.LIMIT_T = LIMIT_T;
     }
 
-    public Integer getCHGA_DATE() {
+    public Date getCHGA_DATE() {
         return CHGA_DATE;
     }
 
-    public void setCHGA_DATE(Integer CHGA_DATE) {
+    public void setCHGA_DATE(Date CHGA_DATE) {
         this.CHGA_DATE = CHGA_DATE;
     }
 
@@ -128,11 +128,11 @@ public class BlazApHsAcctChgs {
         this.CHGA_BEG_DT = CHGA_BEG_DT;
     }
 
-    public Integer getCHGA_END_DT() {
+    public Date getCHGA_END_DT() {
         return CHGA_END_DT;
     }
 
-    public void setCHGA_END_DT(Integer CHGA_END_DT) {
+    public void setCHGA_END_DT(Date CHGA_END_DT) {
         this.CHGA_END_DT = CHGA_END_DT;
     }
 

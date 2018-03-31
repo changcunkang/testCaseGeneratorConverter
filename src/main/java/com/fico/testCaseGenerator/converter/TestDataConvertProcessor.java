@@ -153,8 +153,10 @@ public class TestDataConvertProcessor {
                         }
                     }
 
-                    if(this.rtnList == null && tmpChildList.size()>0){
-                        rtnList = tmpChildList;
+                    if(this.rtnList == null && newTargetObj != null){
+                        List rootRtnList = new ArrayList();
+                        rootRtnList.add( newTargetObj );
+                        rtnList = rootRtnList;
                     }
                 }
             }
@@ -231,19 +233,37 @@ public class TestDataConvertProcessor {
     }
 
     private void appendToParent(Object newTargetObj, Object parentObj) throws Exception{
-        Class cls = newTargetObj.getClass();
 
-        for(Field field : cls.getDeclaredFields()){
+        if(parentObj == null){
+            return;
+        }
+
+
+        Class childCls = newTargetObj.getClass();
+
+        Class parentCls = parentObj.getClass();
+
+        for(Field field : parentCls.getDeclaredFields()){
             if(  Collection.class.isAssignableFrom( field.getType() )){
                 if(field.getGenericType() instanceof ParameterizedType){
                     ParameterizedType pt = (ParameterizedType) field.getGenericType();
                     //得到泛型里的class类型对象
                     Class genericClazz = (Class)pt.getActualTypeArguments()[0];
 
-                    if(genericClazz.equals(cls) ){
+                    if(genericClazz.getSimpleName().equalsIgnoreCase("BlazeApCuProd")){
+                        String a = "";
+                    }
+
+                    if( genericClazz == childCls ){
                        List list = (List) PropertyUtils.getProperty(parentObj, field.getName());
                        list.add(newTargetObj);
                     }
+                }
+            }
+            else {
+                if( ! isBasicType( field.getType()) ){
+                    field.setAccessible(true);
+                    field.set(parentObj, newTargetObj);
                 }
             }
         }

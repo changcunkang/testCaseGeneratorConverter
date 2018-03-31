@@ -7,7 +7,6 @@ import java.util.Date;
 @Entity
 @Table(name="BLAZ_AP_CU_FORCECARRY")
 public class BlazApCuForcecarry {
-
     private String P_ID;
     private String F_ID;
     private String SN;
@@ -18,9 +17,9 @@ public class BlazApCuForcecarry {
     private String CASE_STATUS;
     private Date END_DATE;
     private String CASE_OBJECT;
-    private Double CASE_OBJECT_AMOUNT;
+    private Integer CASE_OBJECT_AMOUNT;
     private String HAD_OBJECT;
-    private Double HAD_OBJECT_AMOUNT;
+    private Integer HAD_OBJECT_AMOUNT;
 
     public String getP_ID() {
         return P_ID;
@@ -102,11 +101,11 @@ public class BlazApCuForcecarry {
         this.CASE_OBJECT = CASE_OBJECT;
     }
 
-    public Double getCASE_OBJECT_AMOUNT() {
+    public Integer getCASE_OBJECT_AMOUNT() {
         return CASE_OBJECT_AMOUNT;
     }
 
-    public void setCASE_OBJECT_AMOUNT(Double CASE_OBJECT_AMOUNT) {
+    public void setCASE_OBJECT_AMOUNT(Integer CASE_OBJECT_AMOUNT) {
         this.CASE_OBJECT_AMOUNT = CASE_OBJECT_AMOUNT;
     }
 
@@ -118,11 +117,11 @@ public class BlazApCuForcecarry {
         this.HAD_OBJECT = HAD_OBJECT;
     }
 
-    public Double getHAD_OBJECT_AMOUNT() {
+    public Integer getHAD_OBJECT_AMOUNT() {
         return HAD_OBJECT_AMOUNT;
     }
 
-    public void setHAD_OBJECT_AMOUNT(Double HAD_OBJECT_AMOUNT) {
+    public void setHAD_OBJECT_AMOUNT(Integer HAD_OBJECT_AMOUNT) {
         this.HAD_OBJECT_AMOUNT = HAD_OBJECT_AMOUNT;
     }
 }

@@ -14,17 +14,17 @@ public class BlazApCuScredBasicInfo {
     private String BUSINESS_SN;
     private String CURRENCY;
     private Date BEG_DATE;
-    private Double EXTENSION;
+    private Integer EXTENSION;
     private String BONDS_TYPE;
     private Date UPDATE_DATE;
-    private Double EXTENSION_SHARE;
-    private Double REMAIN;
-    private Double LAST_6MONTH_AVG;
-    private Double MAX_USED_AMOUNT;
+    private Integer EXTENSION_SHARE;
+    private Integer REMAIN;
+    private Integer LAST_6MONTH_AVG;
+    private Integer MAX_USED_AMOUNT;
     private Date BILL_DATE;
-    private Double REPAYED_AT_MONTH;
+    private Integer REPAYED_AT_MONTH;
     private Date LAST_REPAY_DATE;
-    private Double OVERDUE_180D_AMOUNT;
+    private Integer OVERDUE_180D_AMOUNT;
     private String BEG_YEAR_MONTH;
     private String END_YEAR_MONTH;
     private String MONTH_24STATUS;
@@ -85,11 +85,11 @@ public class BlazApCuScredBasicInfo {
         this.BEG_DATE = BEG_DATE;
     }
 
-    public Double getEXTENSION() {
+    public Integer getEXTENSION() {
         return EXTENSION;
     }
 
-    public void setEXTENSION(Double EXTENSION) {
+    public void setEXTENSION(Integer EXTENSION) {
         this.EXTENSION = EXTENSION;
     }
 
@@ -109,35 +109,35 @@ public class BlazApCuScredBasicInfo {
         this.UPDATE_DATE = UPDATE_DATE;
     }
 
-    public Double getEXTENSION_SHARE() {
+    public Integer getEXTENSION_SHARE() {
         return EXTENSION_SHARE;
     }
 
-    public void setEXTENSION_SHARE(Double EXTENSION_SHARE) {
+    public void setEXTENSION_SHARE(Integer EXTENSION_SHARE) {
         this.EXTENSION_SHARE = EXTENSION_SHARE;
     }
 
-    public Double getREMAIN() {
+    public Integer getREMAIN() {
         return REMAIN;
     }
 
-    public void setREMAIN(Double REMAIN) {
+    public void setREMAIN(Integer REMAIN) {
         this.REMAIN = REMAIN;
     }
 
-    public Double getLAST_6MONTH_AVG() {
+    public Integer getLAST_6MONTH_AVG() {
         return LAST_6MONTH_AVG;
     }
 
-    public void setLAST_6MONTH_AVG(Double LAST_6MONTH_AVG) {
+    public void setLAST_6MONTH_AVG(Integer LAST_6MONTH_AVG) {
         this.LAST_6MONTH_AVG = LAST_6MONTH_AVG;
     }
 
-    public Double getMAX_USED_AMOUNT() {
+    public Integer getMAX_USED_AMOUNT() {
         return MAX_USED_AMOUNT;
     }
 
-    public void setMAX_USED_AMOUNT(Double MAX_USED_AMOUNT) {
+    public void setMAX_USED_AMOUNT(Integer MAX_USED_AMOUNT) {
         this.MAX_USED_AMOUNT = MAX_USED_AMOUNT;
     }
 
@@ -149,11 +149,11 @@ public class BlazApCuScredBasicInfo {
         this.BILL_DATE = BILL_DATE;
     }
 
-    public Double getREPAYED_AT_MONTH() {
+    public Integer getREPAYED_AT_MONTH() {
         return REPAYED_AT_MONTH;
     }
 
-    public void setREPAYED_AT_MONTH(Double REPAYED_AT_MONTH) {
+    public void setREPAYED_AT_MONTH(Integer REPAYED_AT_MONTH) {
         this.REPAYED_AT_MONTH = REPAYED_AT_MONTH;
     }
 
@@ -165,11 +165,11 @@ public class BlazApCuScredBasicInfo {
         this.LAST_REPAY_DATE = LAST_REPAY_DATE;
     }
 
-    public Double getOVERDUE_180D_AMOUNT() {
+    public Integer getOVERDUE_180D_AMOUNT() {
         return OVERDUE_180D_AMOUNT;
     }
 
-    public void setOVERDUE_180D_AMOUNT(Double OVERDUE_180D_AMOUNT) {
+    public void setOVERDUE_180D_AMOUNT(Integer OVERDUE_180D_AMOUNT) {
         this.OVERDUE_180D_AMOUNT = OVERDUE_180D_AMOUNT;
     }
 

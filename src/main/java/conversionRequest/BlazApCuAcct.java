@@ -22,7 +22,7 @@ public class BlazApCuAcct {
     private String E_STMT_ODUE_120;
     private Integer TLMT_END;
     private Date FIRST_CASH;
-    private Integer FIRST_POS;
+    private Date FIRST_POS;
     private Date DAY_OPENED;
     private Integer APMA_CRED_LIMIT;
     private Date FIRST_ACTIVE_DAY;
@@ -209,11 +209,11 @@ public class BlazApCuAcct {
         this.FIRST_CASH = FIRST_CASH;
     }
 
-    public Integer getFIRST_POS() {
+    public Date getFIRST_POS() {
         return FIRST_POS;
     }
 
-    public void setFIRST_POS(Integer FIRST_POS) {
+    public void setFIRST_POS(Date FIRST_POS) {
         this.FIRST_POS = FIRST_POS;
     }
 

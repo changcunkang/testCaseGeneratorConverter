@@ -2,6 +2,7 @@ package conversionRequest;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Table(name="BLAZ_AP_CU_QUERY_DETAIL")
@@ -9,7 +10,7 @@ public class BlazApCuQueryDetail {
     private String P_ID;
     private String REPORT_ID;
     private String SN;
-    private String QUERY_DATE;
+    private Date QUERY_DATE;
     private String QUERY_USER;
     private String QUERY_REASON;
 
@@ -37,11 +38,11 @@ public class BlazApCuQueryDetail {
         this.SN = SN;
     }
 
-    public String getQUERY_DATE() {
+    public Date getQUERY_DATE() {
         return QUERY_DATE;
     }
 
-    public void setQUERY_DATE(String QUERY_DATE) {
+    public void setQUERY_DATE(Date QUERY_DATE) {
         this.QUERY_DATE = QUERY_DATE;
     }
 

@@ -15,16 +15,16 @@ public class CardMdHsAcctFq {
     private Integer CUR_CYCLE_DT;
     private String FQ_TYPE_CODE;
     private String FQ_TYPE;
-    private Double CURR_AMORT_PPL;
-    private Double AMORT_PPL;
-    private Double UNAMORT_PPL;
-    private Double CURR_AMORT_FEE;
-    private Double AMORT_FEE;
-    private Double UNAMORT_FEE;
+    private Integer CURR_AMORT_PPL;
+    private Integer AMORT_PPL;
+    private Integer UNAMORT_PPL;
+    private Integer CURR_AMORT_FEE;
+    private Integer AMORT_FEE;
+    private Integer UNAMORT_FEE;
     private Integer UNAMORT_NBR_MTHS;
     private Integer AMORT_NBR_MTHS;
     private Integer CURR_APP_NBR_MTHS;
-    private Double CURR_APP_AMT;
+    private Integer CURR_APP_AMT;
     private Integer CURR_MAX_NBR_MTHS;
     private Date MYETL_DATE;
 
@@ -84,51 +84,51 @@ public class CardMdHsAcctFq {
         this.FQ_TYPE = FQ_TYPE;
     }
 
-    public Double getCURR_AMORT_PPL() {
+    public Integer getCURR_AMORT_PPL() {
         return CURR_AMORT_PPL;
     }
 
-    public void setCURR_AMORT_PPL(Double CURR_AMORT_PPL) {
+    public void setCURR_AMORT_PPL(Integer CURR_AMORT_PPL) {
         this.CURR_AMORT_PPL = CURR_AMORT_PPL;
     }
 
-    public Double getAMORT_PPL() {
+    public Integer getAMORT_PPL() {
         return AMORT_PPL;
     }
 
-    public void setAMORT_PPL(Double AMORT_PPL) {
+    public void setAMORT_PPL(Integer AMORT_PPL) {
         this.AMORT_PPL = AMORT_PPL;
     }
 
-    public Double getUNAMORT_PPL() {
+    public Integer getUNAMORT_PPL() {
         return UNAMORT_PPL;
     }
 
-    public void setUNAMORT_PPL(Double UNAMORT_PPL) {
+    public void setUNAMORT_PPL(Integer UNAMORT_PPL) {
         this.UNAMORT_PPL = UNAMORT_PPL;
     }
 
-    public Double getCURR_AMORT_FEE() {
+    public Integer getCURR_AMORT_FEE() {
         return CURR_AMORT_FEE;
     }
 
-    public void setCURR_AMORT_FEE(Double CURR_AMORT_FEE) {
+    public void setCURR_AMORT_FEE(Integer CURR_AMORT_FEE) {
         this.CURR_AMORT_FEE = CURR_AMORT_FEE;
     }
 
-    public Double getAMORT_FEE() {
+    public Integer getAMORT_FEE() {
         return AMORT_FEE;
     }
 
-    public void setAMORT_FEE(Double AMORT_FEE) {
+    public void setAMORT_FEE(Integer AMORT_FEE) {
         this.AMORT_FEE = AMORT_FEE;
     }
 
-    public Double getUNAMORT_FEE() {
+    public Integer getUNAMORT_FEE() {
         return UNAMORT_FEE;
     }
 
-    public void setUNAMORT_FEE(Double UNAMORT_FEE) {
+    public void setUNAMORT_FEE(Integer UNAMORT_FEE) {
         this.UNAMORT_FEE = UNAMORT_FEE;
     }
 
@@ -156,11 +156,11 @@ public class CardMdHsAcctFq {
         this.CURR_APP_NBR_MTHS = CURR_APP_NBR_MTHS;
     }
 
-    public Double getCURR_APP_AMT() {
+    public Integer getCURR_APP_AMT() {
         return CURR_APP_AMT;
     }
 
-    public void setCURR_APP_AMT(Double CURR_APP_AMT) {
+    public void setCURR_APP_AMT(Integer CURR_APP_AMT) {
         this.CURR_APP_AMT = CURR_APP_AMT;
     }
 

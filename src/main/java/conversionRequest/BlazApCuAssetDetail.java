@@ -13,9 +13,9 @@ public class BlazApCuAssetDetail {
     private String SN;
     private String ASSET_MANAGE_COMPANY;
     private Date RECIPIENT_DATE;
-    private Double RECIPIENT_AMOUNT;
+    private Integer RECIPIENT_AMOUNT;
     private Date LAST_REPAY_DATE;
-    private Double REMAIN;
+    private Integer REMAIN;
 
     public String getP_ID() {
         return P_ID;
@@ -57,11 +57,11 @@ public class BlazApCuAssetDetail {
         this.RECIPIENT_DATE = RECIPIENT_DATE;
     }
 
-    public Double getRECIPIENT_AMOUNT() {
+    public Integer getRECIPIENT_AMOUNT() {
         return RECIPIENT_AMOUNT;
     }
 
-    public void setRECIPIENT_AMOUNT(Double RECIPIENT_AMOUNT) {
+    public void setRECIPIENT_AMOUNT(Integer RECIPIENT_AMOUNT) {
         this.RECIPIENT_AMOUNT = RECIPIENT_AMOUNT;
     }
 
@@ -73,11 +73,11 @@ public class BlazApCuAssetDetail {
         this.LAST_REPAY_DATE = LAST_REPAY_DATE;
     }
 
-    public Double getREMAIN() {
+    public Integer getREMAIN() {
         return REMAIN;
     }
 
-    public void setREMAIN(Double REMAIN) {
+    public void setREMAIN(Integer REMAIN) {
         this.REMAIN = REMAIN;
     }
 }
