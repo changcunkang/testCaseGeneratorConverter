@@ -21,12 +21,15 @@ public class PCustRef {
 	private Date pDate;
 	@Column
 	private String custRef;
+
 	public Date getpDate() {
 		return pDate;
 	}
+
 	public void setpDate(Date pDate) {
 		this.pDate = pDate;
 	}
+
 	public String getCustRef() {
 		return custRef;
 	}

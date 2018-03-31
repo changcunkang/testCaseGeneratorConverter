@@ -28,19 +28,19 @@ public class Application {
 
 
 	/**客户层信息*/
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private Customer customer = new Customer();
 	/**输出响应*/
 	//@OneToOne(cascade = CascadeType.ALL)
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private DecisionResponse decisionResponse = new DecisionResponse();
 	/**处理历史*/
 	//@OneToOne(cascade = CascadeType.ALL)
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private ProcessingHistory processingHistory = new ProcessingHistory();
 	/**消息列表*/
 	//@OneToOne(cascade = CascadeType.ALL)
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private MessageList messageList = new MessageList();
 	/**入口点*/
 	@Column
@@ -64,17 +64,6 @@ public class Application {
 
 	public void setResponseStr(String responseStr) {
 		this.responseStr = responseStr;
-	}
-
-	@Transient
-	private List<Temporary> temporary = new ArrayList<Temporary>();
-
-	public List<Temporary> getTemporary() {
-		return temporary;
-	}
-
-	public void setTemporary(List<Temporary> temporary) {
-		this.temporary = temporary;
 	}
 
 	public ProcessingHistory getProcessingHistory() {

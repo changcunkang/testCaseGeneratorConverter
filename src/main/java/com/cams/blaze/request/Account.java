@@ -37,9 +37,6 @@ public class Account {
     private	 List<AdjustLimitHistory> adjustLimitHistory = new ArrayList<AdjustLimitHistory>();
 	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     private	 List<UserDefinedField> userDefinedField = new ArrayList<UserDefinedField>();
-	@Transient
-	private List<AccountTemporary> accountTemporary = new ArrayList<AccountTemporary>();
-
 
 	@Column
     private	 String accountNumber;
@@ -259,15 +256,6 @@ public class Account {
     private	 Date reservedDate19;
 	@Column
     private	 Date reservedDate20;
-
-
-	public List<AccountTemporary> getAccountTemporary() {
-		return accountTemporary;
-	}
-
-	public void setAccountTemporary(List<AccountTemporary> accountTemporary) {
-		this.accountTemporary = accountTemporary;
-	}
 
 	public Date getLastTransDate() {
 		return lastTransDate;

@@ -1,9 +1,9 @@
 package com.cams.blaze.service;
 
-
 import com.cams.blaze.request.Application;
 import com.fico.testCaseGenerator.XSTream.XSTreamHelper;
 import com.fico.testCaseGenerator.repository.ApplicationDao;
+import com.thoughtworks.xstream.XStream;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -39,7 +39,7 @@ public class TestDataQueryService {
     }
 
     public String findApplicationXMLStringByID(long appcationID){
-        Application application = this.appDao.findById(appcationID);
+        Application application = this.appDao.findById( appcationID );
         return application.getResponseStr();
     }
 

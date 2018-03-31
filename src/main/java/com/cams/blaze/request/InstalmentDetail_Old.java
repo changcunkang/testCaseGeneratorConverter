@@ -19,14 +19,7 @@ public class InstalmentDetail_Old {
     public void setInstalmentID(String instalmentID) {
         this.instalmentID = instalmentID;
     }
-    public Double getUnAmortizationFee() {
-        return unAmortizationFee;
-    }
 
-    public void setUnAmortizationFee(Double unAmortizationFee) {
-        this.unAmortizationFee = unAmortizationFee;
-    }
-    private Double unAmortizationFee;
     //手续费
     private Double poundage;
 

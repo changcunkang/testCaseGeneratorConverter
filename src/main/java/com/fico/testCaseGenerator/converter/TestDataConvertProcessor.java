@@ -25,11 +25,16 @@ public class TestDataConvertProcessor {
 
     public TestDataConvertProcessor(){
         testDataConverter = new TestDataConverter();
+        try {
+            buildConstructor();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private List<ConfigRawData> configRawDataList = new ArrayList<ConfigRawData>();
 
-    public Object buildConstructor(Object applicationObj) throws Exception{
+    public void buildConstructor() throws Exception{
 
         loadConversion = LoadConversionConfiguration.readExcelData("C:\\temp\\conversion.xls");
 
@@ -49,7 +54,6 @@ public class TestDataConvertProcessor {
 
         updateSourceBOMConverterMapperRref();
 
-        return null;
     }
 
     private void updateSourceBOMConverterMapperRref(){
@@ -66,13 +70,22 @@ public class TestDataConvertProcessor {
         }
     }
 
-    public void process(Object appObj) throws Exception {
+    public List process(Object appObj) throws Exception {
         if(appObj != null){
-            recursiveBuildTargetBOM(appObj, null, null);
+           recursiveBuildTargetBOM(appObj, null, null);
+
+            List rtn =  this.rtnList;
+
+            this.rtnList = null;
+
+            return rtn;
         }
+        return null;
     }
 
-    private void recursiveBuildTargetBOM(Object currentSrcOBJ, List parentSrcObjList, Object parentTargetObj) throws Exception{
+    private List rtnList = null;
+
+    private Object recursiveBuildTargetBOM(Object currentSrcOBJ, List parentSrcObjList, Object parentTargetObj) throws Exception{
 
         Class cls = currentSrcOBJ.getClass();
 
@@ -93,6 +106,9 @@ public class TestDataConvertProcessor {
                 }
                 else{
                     String fieldName = field.getName();
+
+                    List tmpChildList = new ArrayList();
+
                     if(  Collection.class.isAssignableFrom( field.getType() )){
                         if(field.getGenericType() instanceof ParameterizedType){
                             ParameterizedType pt = (ParameterizedType) field.getGenericType();
@@ -102,12 +118,17 @@ public class TestDataConvertProcessor {
                             List childrenEleList = (List)PropertyUtils.getProperty(currentSrcOBJ, fieldName);
 
                             if(childrenEleList != null){
+
                                 for(Object child : childrenEleList){
 
                                     List ll = new ArrayList(parentSrcObjList);
                                     ll.add(child);
 
-                                    recursiveBuildTargetBOM(child, ll, newTargetObj);
+                                    Object tmpRtnObj = recursiveBuildTargetBOM(child, ll, newTargetObj);
+                                    if( tmpRtnObj != null ){
+                                        tmpChildList.add( tmpRtnObj );
+                                    }
+
                                 }
                             }
                         }
@@ -116,17 +137,35 @@ public class TestDataConvertProcessor {
 
                         Object oneToOneChild = PropertyUtils.getProperty(currentSrcOBJ, fieldName);
 
-                        List ll = new ArrayList(parentSrcObjList);
+                        List ll = null;
+
+                        if(parentSrcObjList == null){
+                            ll = new ArrayList();
+                        }else{
+                            ll = new ArrayList(parentSrcObjList);
+                        }
 
                         ll.add(oneToOneChild);
 
-                        recursiveBuildTargetBOM(oneToOneChild, ll, newTargetObj);
+                        Object tmpRtnObj = recursiveBuildTargetBOM(oneToOneChild, ll, newTargetObj);
+                        if( tmpRtnObj != null ){
+                            tmpChildList.add( tmpRtnObj );
+                        }
+                    }
+
+                    if(this.rtnList == null && tmpChildList.size()>0){
+                        rtnList = tmpChildList;
                     }
                 }
             }
+            return newTargetObj;
     }
 
-    private void setTargetObjAttribute(Object currentSrcOBJ, List parentSrcObjList, Object currentTargetObj) throws Exception{
+    public List getRtnList() {
+        return rtnList;
+    }
+
+    private void setTargetObjAttribute(Object currentSrcOBJ, List parentSrcObjList, Object currentTargetObj) {
         Class targetCls = currentTargetObj.getClass();
 
         String clsName = targetCls.getSimpleName();
@@ -136,20 +175,46 @@ public class TestDataConvertProcessor {
 
             String[] srcBeanNameAndSrcBeanAttrName = getSrcBeanNameAndSrcBeanAttrName(clsName, fieldName);
 
-            String targetCorrspondingClsName = srcBeanNameAndSrcBeanAttrName[0];
+            if( srcBeanNameAndSrcBeanAttrName != null ){
+                String targetCorrspondingClsName = srcBeanNameAndSrcBeanAttrName[0];
 
-            String targetCorrspondingFieldName = srcBeanNameAndSrcBeanAttrName[1];
+                String targetCorrspondingFieldName = srcBeanNameAndSrcBeanAttrName[1];
 
-            if (targetCorrspondingClsName.equalsIgnoreCase( currentSrcOBJ.getClass().getSimpleName() )) {
-                Object corrspondingVal = PropertyUtils.getProperty(currentSrcOBJ, targetCorrspondingFieldName);
-                PropertyUtils.setProperty(currentTargetObj, targetCorrspondingFieldName, corrspondingVal);
-            }
-            else{
-                for(Object obj : parentSrcObjList){
-                    if (targetCorrspondingClsName.equalsIgnoreCase( obj.getClass().getSimpleName() )) {
-                        Object corrspondingVal = PropertyUtils.getProperty(obj, targetCorrspondingFieldName);
-                        PropertyUtils.setProperty(currentTargetObj, targetCorrspondingFieldName, corrspondingVal);
+                try{
+                    if (targetCorrspondingClsName.equalsIgnoreCase( currentSrcOBJ.getClass().getSimpleName() )) {
+
+                        Field curField = currentSrcOBJ.getClass().getDeclaredField(targetCorrspondingFieldName.trim());
+
+                        curField.setAccessible(true);
+
+                        Object corrspondingVal = curField.get(currentSrcOBJ);
+
+                        //Object corrspondingVal = PropertyUtils.getProperty(currentSrcOBJ, targetCorrspondingFieldName.trim());
+
+                        if( corrspondingVal != null){
+                            if( field.getType() == Double.class || field.getType() == double.class){
+                                corrspondingVal = new Double(corrspondingVal.toString());
+                            }else if(field.getType() == Integer.class || field.getType() == int.class){
+                                corrspondingVal = new Double(corrspondingVal.toString()).intValue();
+                            }
+                        }
+
+                        field.setAccessible(true);
+                        field.set(currentTargetObj, corrspondingVal);
+                        //PropertyUtils.setProperty(currentTargetObj, fieldName.trim(), corrspondingVal);
                     }
+                    else{
+                        for(Object obj : parentSrcObjList){
+                            if (targetCorrspondingClsName.equalsIgnoreCase( obj.getClass().getSimpleName() )) {
+                                Object corrspondingVal = PropertyUtils.getSimpleProperty(obj, targetCorrspondingFieldName);
+                                PropertyUtils.setSimpleProperty(currentTargetObj, targetCorrspondingFieldName.trim(), corrspondingVal);
+
+                            }
+                        }
+                    }
+                }
+                catch (Exception e){
+                    e.printStackTrace();
                 }
             }
         }
@@ -276,12 +341,5 @@ public class TestDataConvertProcessor {
             return true;
         }
         return false;
-    }
-
-
-    public static void main(String[] args) throws Exception{
-        TestDataConvertProcessor testDataConvertProcessor = new TestDataConvertProcessor();
-
-        testDataConvertProcessor.buildConstructor( new Application());
     }
 }

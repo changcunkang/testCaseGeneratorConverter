@@ -19,7 +19,6 @@ public class Customer {
     private	 Integer strategyRandomDigit01;
 	@Column
     private	 Integer strategyRandomDigit02;
-
 	@Column
     private	 Integer strategyRandomDigit03;
 	@Column
@@ -36,6 +35,26 @@ public class Customer {
     private	 Integer strategyRandomDigit09;
 	@Column
     private	 Integer strategyRandomDigit10;
+	@Column
+	private	 Integer strategyRandomDigit11;
+	@Column
+	private	 Integer strategyRandomDigit12;
+	@Column
+	private	 Integer strategyRandomDigit13;
+	@Column
+	private	 Integer strategyRandomDigit14;
+	@Column
+	private	 Integer strategyRandomDigit15;
+	@Column
+	private	 Integer strategyRandomDigit16;
+	@Column
+	private	 Integer strategyRandomDigit17;
+	@Column
+	private	 Integer strategyRandomDigit18;
+	@Column
+	private	 Integer strategyRandomDigit19;
+	@Column
+	private	 Integer strategyRandomDigit20;
 	@Column
     private	 String companyName;
 	@Column
@@ -235,6 +254,7 @@ public class Customer {
     private	 Date reservedDate20;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name="parent_id")
     private	 List<EnabledDecisionArea> enabledDecisionArea = new ArrayList<EnabledDecisionArea>();
 
 	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
@@ -978,5 +998,85 @@ public class Customer {
 
 	public void setLayerCoder2Acct(String layerCoder2Acct) {
 		this.layerCoder2Acct = layerCoder2Acct;
+	}
+
+	public Integer getStrategyRandomDigit11() {
+		return strategyRandomDigit11;
+	}
+
+	public void setStrategyRandomDigit11(Integer strategyRandomDigit11) {
+		this.strategyRandomDigit11 = strategyRandomDigit11;
+	}
+
+	public Integer getStrategyRandomDigit12() {
+		return strategyRandomDigit12;
+	}
+
+	public void setStrategyRandomDigit12(Integer strategyRandomDigit12) {
+		this.strategyRandomDigit12 = strategyRandomDigit12;
+	}
+
+	public Integer getStrategyRandomDigit13() {
+		return strategyRandomDigit13;
+	}
+
+	public void setStrategyRandomDigit13(Integer strategyRandomDigit13) {
+		this.strategyRandomDigit13 = strategyRandomDigit13;
+	}
+
+	public Integer getStrategyRandomDigit14() {
+		return strategyRandomDigit14;
+	}
+
+	public void setStrategyRandomDigit14(Integer strategyRandomDigit14) {
+		this.strategyRandomDigit14 = strategyRandomDigit14;
+	}
+
+	public Integer getStrategyRandomDigit15() {
+		return strategyRandomDigit15;
+	}
+
+	public void setStrategyRandomDigit15(Integer strategyRandomDigit15) {
+		this.strategyRandomDigit15 = strategyRandomDigit15;
+	}
+
+	public Integer getStrategyRandomDigit16() {
+		return strategyRandomDigit16;
+	}
+
+	public void setStrategyRandomDigit16(Integer strategyRandomDigit16) {
+		this.strategyRandomDigit16 = strategyRandomDigit16;
+	}
+
+	public Integer getStrategyRandomDigit17() {
+		return strategyRandomDigit17;
+	}
+
+	public void setStrategyRandomDigit17(Integer strategyRandomDigit17) {
+		this.strategyRandomDigit17 = strategyRandomDigit17;
+	}
+
+	public Integer getStrategyRandomDigit18() {
+		return strategyRandomDigit18;
+	}
+
+	public void setStrategyRandomDigit18(Integer strategyRandomDigit18) {
+		this.strategyRandomDigit18 = strategyRandomDigit18;
+	}
+
+	public Integer getStrategyRandomDigit19() {
+		return strategyRandomDigit19;
+	}
+
+	public void setStrategyRandomDigit19(Integer strategyRandomDigit19) {
+		this.strategyRandomDigit19 = strategyRandomDigit19;
+	}
+
+	public Integer getStrategyRandomDigit20() {
+		return strategyRandomDigit20;
+	}
+
+	public void setStrategyRandomDigit20(Integer strategyRandomDigit20) {
+		this.strategyRandomDigit20 = strategyRandomDigit20;
 	}
 }

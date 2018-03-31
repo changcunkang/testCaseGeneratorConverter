@@ -1,5 +1,6 @@
 package com.fico.testCaseGenerator.converter;
 
+import javax.xml.transform.Source;
 import java.util.ResourceBundle;
 
 /**
@@ -12,7 +13,9 @@ public class TargetBOMBeanConverMapper extends BOMBeanConvertMapper {
 
     public TargetBOMBeanConverMapper(String clsSimpleName){
 
-        String javaClassName = packageName + clsSimpleName;
+        String tmpClsSimpleName = clsSimpleName.substring(0,1).toUpperCase() + clsSimpleName.substring(1);
+
+        String javaClassName = packageName + tmpClsSimpleName;
 
         try {
             this.setCorrespondingClass( Class.forName(javaClassName  ) );
