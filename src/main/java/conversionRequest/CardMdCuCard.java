@@ -1,46 +1,99 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="CARD_MD_CU_CARD")
 public class CardMdCuCard {
-
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column
+    private Long id;
+    @Column
+    private Long parent_id;
+    @Column(name = "CARD_NBR")
     private String CARD_NBR;
+    @Column(name = "CYCLE_NBR")
     private Integer CYCLE_NBR;
+    @Column(name = "APP_JDAY")
     private String APP_JDAY;
+    @Column(name = "APP_SEQ")
     private String APP_SEQ;
+    @Column(name = "MICROFILM")
     private String MICROFILM;
+    @Column(name = "ACCT_DAY_OPENED")
     private Integer ACCT_DAY_OPENED;
+    @Column(name = "CARD_ID")
     private String CARD_ID;
+    @Column(name = "FIRST_ACTIVE_DAY")
     private Integer FIRST_ACTIVE_DAY;
+    @Column(name = "FIRST_CASH")
     private Integer FIRST_CASH;
+    @Column(name = "FIRST_POS")
     private Integer FIRST_POS;
+    @Column(name = "PRODUCT")
     private Integer PRODUCT;
+    @Column(name = "PRODUCT_DESC")
     private String PRODUCT_DESC;
+    @Column(name = "XACCOUNT")
     private String XACCOUNT;
+    @Column(name = "CUSTR_NBR")
     private String CUSTR_NBR;
+    @Column(name = "MASTER_NBR")
     private String MASTER_NBR;
+    @Column(name = "CHANNEL")
     private String CHANNEL;
+    @Column(name = "CARDHOLDER")
     private Integer CARDHOLDER;
+    @Column(name = "CANCL_CODE")
     private String CANCL_CODE;
+    @Column(name = "ACTIVE_DAY")
     private Integer ACTIVE_DAY;
+    @Column(name = "MAILER_1ST")
     private Integer MAILER_1ST;
+    @Column(name = "LAST_POS")
     private Integer LAST_POS;
+    @Column(name = "LAST_CASH")
     private Integer LAST_CASH;
+    @Column(name = "FIRST_OPOS")
     private Integer FIRST_OPOS;
+    @Column(name = "FIRST_OCASH")
     private Integer FIRST_OCASH;
+    @Column(name = "LAST_OPOS")
     private Integer LAST_OPOS;
+    @Column(name = "LAST_OCASH")
     private Integer LAST_OCASH;
+    @Column(name = "ACT_FLAG")
     private Integer ACT_FLAG;
+    @Column(name = "LAST_TDAY")
     private Integer LAST_TDAY;
+    @Column(name = "LAST_TDAYS")
     private Integer LAST_TDAYS;
+    @Column(name = "CARD_EFF_FLAG")
     private Integer CARD_EFF_FLAG;
+    @Column(name = "ISSUE_DAY")
     private Integer ISSUE_DAY;
+    @Column(name = "MONTH_NBR")
     private Integer MONTH_NBR;
+    @Column(name = "MYETL_DATE")
     private Date MYETL_DATE;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
 
     public String getCARD_NBR() {
         return CARD_NBR;

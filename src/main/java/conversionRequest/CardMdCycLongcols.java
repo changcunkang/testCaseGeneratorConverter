@@ -1,22 +1,61 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="CARD_MD_CYC_LONGCOLS")
 public class CardMdCycLongcols {
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column(name ="XACCOUNT")
+    private Long id;
+    @Column
+    private Long parent_id;
+    @Column(name ="XACCOUNT")
     private String XACCOUNT;
+    @Column(name ="CARD_NBR")
     private String CARD_NBR;
+    @Column(name ="PROD_CD")
     private String PROD_CD;
+    @Column(name ="PROD_TYPE")
     private String PROD_TYPE;
+    @Column(name ="CUSTR_NBR")
     private String CUSTR_NBR;
+    @Column(name ="MONTH_NBR")
     private Integer MONTH_NBR;
+    @Column(name ="CYCLE_NBR")
     private Integer CYCLE_NBR;
+    @Column(name ="FQ_TYPE")
     private Integer FQ_TYPE;
-    private String ID;
+    @Column(name ="MYETL_DATE")
     private Date MYETL_DATE;
+    @Column(name = "ID")
+    private String ID;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
 
     public String getXACCOUNT() {
         return XACCOUNT;
@@ -80,14 +119,6 @@ public class CardMdCycLongcols {
 
     public void setFQ_TYPE(Integer FQ_TYPE) {
         this.FQ_TYPE = FQ_TYPE;
-    }
-
-    public String getID() {
-        return ID;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
     }
 
     public Date getMYETL_DATE() {

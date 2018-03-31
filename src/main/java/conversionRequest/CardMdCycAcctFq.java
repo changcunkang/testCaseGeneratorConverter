@@ -1,32 +1,71 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="CARD_MD_CYC_ACCT_FQ")
 public class CardMdCycAcctFq {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column
+    private Long id;
+    @Column
+    private Long parent_id;
+    @Column(name = "XACCOUNT")
     private String XACCOUNT;
+    @Column(name = "CUSTR_NBR")
     private String CUSTR_NBR;
+    @Column(name = "MONTH_NBR")
     private Integer MONTH_NBR;
+    @Column(name = "CATEGORY")
     private Integer CATEGORY;
+    @Column(name = "CUR_CYCLE_DT")
     private Integer CUR_CYCLE_DT;
+    @Column(name = "FQ_TYPE_CODE")
     private String FQ_TYPE_CODE;
+    @Column(name = "FQ_TYPE")
     private String FQ_TYPE;
+    @Column(name = "CURR_AMORT_PPL")
     private Integer CURR_AMORT_PPL;
+    @Column(name = "AMORT_PPL")
     private Integer AMORT_PPL;
+    @Column(name = "UNAMORT_PPL")
     private Integer UNAMORT_PPL;
+    @Column(name = "CURR_AMORT_FEE")
     private Integer CURR_AMORT_FEE;
+    @Column(name = "AMORT_FEE")
     private Integer AMORT_FEE;
+    @Column(name = "UNAMORT_FEE")
     private Integer UNAMORT_FEE;
+    @Column(name = "UNAMORT_NBR_MTHS")
     private Integer UNAMORT_NBR_MTHS;
+    @Column(name = "AMORT_NBR_MTHS")
     private Integer AMORT_NBR_MTHS;
+    @Column(name = "CURR_APP_NBR_MTHS")
     private Integer CURR_APP_NBR_MTHS;
+    @Column(name = "CURR_APP_AMT")
     private Integer CURR_APP_AMT;
+    @Column(name = "CURR_MAX_NBR_MTHS")
     private Integer CURR_MAX_NBR_MTHS;
+    @Column(name = "MYETL_DATE")
     private Date MYETL_DATE;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
 
     public String getXACCOUNT() {
         return XACCOUNT;

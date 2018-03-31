@@ -250,7 +250,7 @@ public class TestDataConvertProcessor {
                     //得到泛型里的class类型对象
                     Class genericClazz = (Class)pt.getActualTypeArguments()[0];
 
-                    if(genericClazz.getSimpleName().equalsIgnoreCase("BlazeApCuProd")){
+                    if(genericClazz.getSimpleName().equalsIgnoreCase("BlazApCuProd")){
                         String a = "";
                     }
 

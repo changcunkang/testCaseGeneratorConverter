@@ -1,28 +1,65 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="BLAZ_AP_HS_ACCT_CHGS")
 public class BlazApHsAcctChgs {
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column
+    private Long id;
+    @Column
+    private Long parent_id;
+    @Column(name = "CUSTR_NBR")
     private String CUSTR_NBR;
+    @Column(name = "XACCOUNT")
     private String XACCOUNT;
+    @Column(name = "CATEGORY")
     private Integer CATEGORY;
+    @Column(name = "APP_LIMIT_DATE")
     private Integer APP_LIMIT_DATE;
+    @Column(name = "APP_LIMIT_CH")
     private String APP_LIMIT_CH;
+    @Column(name = "APP_LIMIT")
     private Integer APP_LIMIT;
+    @Column(name = "APP_LIMIT_RLT")
     private Integer APP_LIMIT_RLT;
+    @Column(name = "CHGA_TYPE")
     private String CHGA_TYPE;
+    @Column(name = "LIMIT_CHWAY")
     private String LIMIT_CHWAY;
+    @Column(name = "LIMIT_T")
     private Integer LIMIT_T;
+    @Column(name = "CHGA_DATE")
     private Date CHGA_DATE;
+    @Column(name = "CHGA_AFTER_VALUE")
     private Integer CHGA_AFTER_VALUE;
+    @Column(name = "CHGA_BEG_DT")
     private Integer CHGA_BEG_DT;
+    @Column(name = "CHGA_END_DT")
     private Date CHGA_END_DT;
+    @Column(name = "CHGA_BEFOR_VALUE")
     private Integer CHGA_BEFOR_VALUE;
+    @Column(name = "MYETL_DATE")
     private Date MYETL_DATE;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
 
     public String getCUSTR_NBR() {
         return CUSTR_NBR;

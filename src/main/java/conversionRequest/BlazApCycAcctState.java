@@ -1,49 +1,122 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="BLAZ_AP_CYC_ACCT_STAT")
 public class BlazApCycAcctState {
-
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column
+    private Long id;
+    @Column
+    private Long parent_id;
+    @Column(name="XACCOUNT")
     private String XACCOUNT;
+    @Column(name="CATEGORY")
     private Integer CATEGORY;
+    @Column(name="BlAZ_PROD_CD")
     private String BlAZ_PROD_CD;
+    @Column(name="CUSTR_NBR")
     private String CUSTR_NBR;
+    @Column(name="MONTH_NBR")
     private Integer MONTH_NBR;
+    @Column(name="CYCLE_NBR")
     private Integer CYCLE_NBR;
+    @Column(name="MTHS_ODUE")
     private Integer MTHS_ODUE;
+    @Column(name="MAX_LIMIT")
     private Integer MAX_LIMIT;
+    @Column(name="MAX_TEMP_LIMIT")
     private Integer MAX_TEMP_LIMIT;
+    @Column(name="CRED_LIMIT")
     private Integer CRED_LIMIT;
+    @Column(name="TEMP_LIMIT")
     private Integer TEMP_LIMIT;
+    @Column(name="MAX_CASH_LIMIT")
     private Integer MAX_CASH_LIMIT;
+    @Column(name="STM_BALNCE")
     private Integer STM_BALNCE;
+    @Column(name="ODUE_AMT")
     private Integer ODUE_AMT;
+    @Column(name="STM_BALORI")
     private Integer STM_BALORI;
+    @Column(name="INCOME")
     private Integer INCOME;
+    @Column(name="CUR_BAL_SUM")
     private Integer CUR_BAL_SUM;
+    @Column(name="RECVBL_DEBT")
     private Integer RECVBL_DEBT;
+    @Column(name="CUR_LIMIT_SUM")
     private Integer CUR_LIMIT_SUM;
+    @Column(name="MAX_CUR_BAL")
     private Integer MAX_CUR_BAL;
+    @Column(name="FQ_ZD_INSTL")
     private Integer FQ_ZD_INSTL;
+    @Column(name="PAYMT_CLRD")
     private Integer PAYMT_CLRD;
+    @Column(name="CONSM_AMT_TOP_1")
     private Integer CONSM_AMT_TOP_1;
+    @Column(name="CONSM_AMT_TOP_2")
     private Integer CONSM_AMT_TOP_2;
+    @Column(name="CONSM_AMT_TOP_3")
     private Integer CONSM_AMT_TOP_3;
+    @Column(name="CONSM_AMT_TOP_4")
     private Integer CONSM_AMT_TOP_4;
+    @Column(name="CONSM_AMT_TOP_5")
     private Integer CONSM_AMT_TOP_5;
+    @Column(name="IS_ADJ_LIMIT_INCYC")
     private Integer IS_ADJ_LIMIT_INCYC;
+    @Column(name="IS_ADJ_TMP_LIMIT_INCYC")
     private Integer IS_ADJ_TMP_LIMIT_INCYC;
+    @Column(name="IS_XFFQ_INCYC")
     private Integer IS_XFFQ_INCYC;
+    @Column(name="IS_ZDFQ_INCYC")
     private Integer IS_ZDFQ_INCYC;
+    @Column(name="INP_CASH_AMT")
 
     private Integer INP_CASH_AMT;
+    @Column(name="INT_AMT")
     private Integer INT_AMT;
+    @Column(name="DAYS_LIMIT_USED")
     private Integer DAYS_LIMIT_USED;
+    @Column(name="MYETL_DATE")
     private Date MYETL_DATE;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<CardMdCycLongcols> cardMdCycLongcols=new ArrayList<conversionRequest.CardMdCycLongcols>();
+    @OneToMany(cascade =CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "parent_id")
+    private List<CardMdCycAcctXf> cardMdCycAcctXf=new ArrayList<CardMdCycAcctXf>();
+    @OneToMany(cascade =CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "parent_id")
+    private List<CardMdCycAcctJy> cardMdCycAcctJy=new ArrayList<CardMdCycAcctJy>();
+    @OneToMany(cascade =CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "parent_id")
+    private List<CardMdCycAcctFq> cardMdCycAcctFq=new ArrayList<CardMdCycAcctFq>();
+    @OneToMany(cascade =CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "parent_id")
+    private List<CardMdCycAcctHdevn> cardMdCycAcctHdevn=new ArrayList<CardMdCycAcctHdevn>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
 
     public String getXACCOUNT() {
         return XACCOUNT;
@@ -323,5 +396,45 @@ public class BlazApCycAcctState {
 
     public void setMYETL_DATE(Date MYETL_DATE) {
         this.MYETL_DATE = MYETL_DATE;
+    }
+
+    public List<CardMdCycLongcols> getCardMdCycLongcols() {
+        return cardMdCycLongcols;
+    }
+
+    public void setCardMdCycLongcols(List<CardMdCycLongcols> cardMdCycLongcols) {
+        this.cardMdCycLongcols = cardMdCycLongcols;
+    }
+
+    public List<CardMdCycAcctXf> getCardMdCycAcctXf() {
+        return cardMdCycAcctXf;
+    }
+
+    public void setCardMdCycAcctXf(List<CardMdCycAcctXf> cardMdCycAcctXf) {
+        this.cardMdCycAcctXf = cardMdCycAcctXf;
+    }
+
+    public List<CardMdCycAcctJy> getCardMdCycAcctJy() {
+        return cardMdCycAcctJy;
+    }
+
+    public void setCardMdCycAcctJy(List<CardMdCycAcctJy> cardMdCycAcctJy) {
+        this.cardMdCycAcctJy = cardMdCycAcctJy;
+    }
+
+    public List<CardMdCycAcctFq> getCardMdCycAcctFq() {
+        return cardMdCycAcctFq;
+    }
+
+    public void setCardMdCycAcctFq(List<CardMdCycAcctFq> cardMdCycAcctFq) {
+        this.cardMdCycAcctFq = cardMdCycAcctFq;
+    }
+
+    public List<CardMdCycAcctHdevn> getCardMdCycAcctHdevn() {
+        return cardMdCycAcctHdevn;
+    }
+
+    public void setCardMdCycAcctHdevn(List<CardMdCycAcctHdevn> cardMdCycAcctHdevn) {
+        this.cardMdCycAcctHdevn = cardMdCycAcctHdevn;
     }
 }

@@ -1,21 +1,51 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="CARD_MD_CYC_ACCT_XF")
 public class CardMdCycAcctXf {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column
+    private Long id;
+    @Column
+    private Long parent_id;
+    @Column(name = "XACCOUNT")
     private String XACCOUNT;
+    @Column(name = "MONTH_NBR")
     private Integer MONTH_NBR;
+    @Column(name = "CUR_CYCLE_DT")
     private Integer CUR_CYCLE_DT;
+    @Column(name = "CUSTR_NBR")
     private String CUSTR_NBR;
+    @Column(name = "CONSM_TYPE_CODE")
     private String CONSM_TYPE_CODE;
+    @Column(name = "CONSM_TYPE")
     private String CONSM_TYPE;
+    @Column(name = "CONSM_CNT")
     private Integer CONSM_CNT;
+    @Column(name = "CONSM_AMT")
     private Integer CONSM_AMT;
+    @Column(name = "MYETL_DATE")
     private Date MYETL_DATE;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
 
     public String getXACCOUNT() {
         return XACCOUNT;
