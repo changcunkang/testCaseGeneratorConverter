@@ -1,5 +1,3 @@
-package test.java;
-
 import com.cams.blaze.request.Application;
 import com.cams.blaze.request.Customer;
 import com.cams.blaze.request.Product;

@@ -1,5 +1,4 @@
-package test.java;
-
+import com.cams.blaze.request.Application;
 import com.fico.testCaseGenerator.converter.TestDataConvertProcessor;
 
 /**
