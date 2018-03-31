@@ -1,16 +1,18 @@
 package conversionRequest;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name="BLAZ_AP_CU_PROD")
-public class BlazeApCuProd {
+public class BlazApCuProd {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column
+    private Long id;
     @Column(name="PROD_CD")
     private String PROD_CD;
     @Column(name="PROD_TYPE")
@@ -27,7 +29,12 @@ public class BlazeApCuProd {
     private String CHANNEL;
     @Column(name="MYETL_DATE")
     private Date MYETL_DATE;
+    @Column
+    private Long parent_id;
 
+
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
     private List<BlazApCuAcct> blazApCuAcct=new ArrayList<BlazApCuAcct>();
 
     public List<BlazApCuAcct> getBlazApCuAcct() {
@@ -36,6 +43,22 @@ public class BlazeApCuProd {
 
     public void setBlazApCuAcct(List<BlazApCuAcct> blazApCuAcct) {
         this.blazApCuAcct = blazApCuAcct;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
     }
 
     public String getPROD_CD() {

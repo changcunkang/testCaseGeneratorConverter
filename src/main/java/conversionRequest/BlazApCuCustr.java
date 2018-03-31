@@ -1,16 +1,18 @@
 package conversionRequest;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="BLAZ_AP_CU_CUSTR")
+@Table(name="BLAZE_AP_CU_CUSTR")
 public class BlazApCuCustr {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column
+    private Long id;
     @Column(name="CUSTR_NBR")
     private String CUSTR_NBR;
     @Column(name="RACE_CODE")
@@ -60,13 +62,13 @@ public class BlazApCuCustr {
     @Column(name="COMP_NAME")
     private String COMP_NAME;
     @Column(name="FIRST_APP_PBC_SCORE")
-    private Double FIRST_APP_PBC_SCORE;//与BOM文档中相对应
+    private Integer FIRST_APP_PBC_SCORE;
     @Column(name="LATEST_APP_PBC_SCORE")
     private Integer LATEST_APP_PBC_SCORE;
     @Column(name="INCOME_ANN")
-    private Double INCOME_ANN;
+    private Integer INCOME_ANN;
     @Column(name="INNER_GJJ_FUND_BASE")
-    private Double INNER_GJJ_FUND_BASE;
+    private Integer INNER_GJJ_FUND_BASE;
     @Column(name="EDUCA_DES")
     private String EDUCA_DES;
     @Column(name="GENDER")
@@ -86,7 +88,7 @@ public class BlazApCuCustr {
     @Column(name="IS_MARGIN_CUSTR")
     private String IS_MARGIN_CUSTR;
     @Column(name="CAP_COST_COEF")
-    private Double CAP_COST_COEF;
+    private Integer CAP_COST_COEF;
     @Column(name="IS_FRAUD_CUSTR")
     private Integer IS_FRAUD_CUSTR;
     @Column(name="IMPT_MSG_TIPS_12MTH")
@@ -106,7 +108,28 @@ public class BlazApCuCustr {
     @Column(name="MONTH_NBR")
     private Integer MONTH_NBR;
 
-    private List<BlazeApCuProd> blazeApCuProd=new ArrayList<BlazeApCuProd>();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuProd> BlazeApCuProd=new ArrayList<conversionRequest.BlazApCuProd>();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuPbocBasicInfo> blazApCuPbocBasicInfo=new ArrayList<BlazApCuPbocBasicInfo>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<BlazApCuPbocBasicInfo> getBlazApCuPbocBasicInfo() {
+        return blazApCuPbocBasicInfo;
+    }
+
+    public void setBlazApCuPbocBasicInfo(List<BlazApCuPbocBasicInfo> blazApCuPbocBasicInfo) {
+        this.blazApCuPbocBasicInfo = blazApCuPbocBasicInfo;
+    }
 
     public String getCUSTR_NBR() {
         return CUSTR_NBR;
@@ -300,6 +323,13 @@ public class BlazApCuCustr {
         this.COMP_NAME = COMP_NAME;
     }
 
+    public Integer getFIRST_APP_PBC_SCORE() {
+        return FIRST_APP_PBC_SCORE;
+    }
+
+    public void setFIRST_APP_PBC_SCORE(Integer FIRST_APP_PBC_SCORE) {
+        this.FIRST_APP_PBC_SCORE = FIRST_APP_PBC_SCORE;
+    }
 
     public Integer getLATEST_APP_PBC_SCORE() {
         return LATEST_APP_PBC_SCORE;
@@ -309,19 +339,19 @@ public class BlazApCuCustr {
         this.LATEST_APP_PBC_SCORE = LATEST_APP_PBC_SCORE;
     }
 
-    public Double getINCOME_ANN() {
+    public Integer getINCOME_ANN() {
         return INCOME_ANN;
     }
 
-    public void setINCOME_ANN(Double INCOME_ANN) {
+    public void setINCOME_ANN(Integer INCOME_ANN) {
         this.INCOME_ANN = INCOME_ANN;
     }
 
-    public Double getINNER_GJJ_FUND_BASE() {
+    public Integer getINNER_GJJ_FUND_BASE() {
         return INNER_GJJ_FUND_BASE;
     }
 
-    public void setINNER_GJJ_FUND_BASE(Double INNER_GJJ_FUND_BASE) {
+    public void setINNER_GJJ_FUND_BASE(Integer INNER_GJJ_FUND_BASE) {
         this.INNER_GJJ_FUND_BASE = INNER_GJJ_FUND_BASE;
     }
 
@@ -397,11 +427,11 @@ public class BlazApCuCustr {
         this.IS_MARGIN_CUSTR = IS_MARGIN_CUSTR;
     }
 
-    public Double getCAP_COST_COEF() {
+    public Integer getCAP_COST_COEF() {
         return CAP_COST_COEF;
     }
 
-    public void setCAP_COST_COEF(Double CAP_COST_COEF) {
+    public void setCAP_COST_COEF(Integer CAP_COST_COEF) {
         this.CAP_COST_COEF = CAP_COST_COEF;
     }
 
@@ -475,21 +505,5 @@ public class BlazApCuCustr {
 
     public void setMONTH_NBR(Integer MONTH_NBR) {
         this.MONTH_NBR = MONTH_NBR;
-    }
-
-    public Double getFIRST_APP_PBC_SCORE() {
-        return FIRST_APP_PBC_SCORE;
-    }
-
-    public void setFIRST_APP_PBC_SCORE(Double FIRST_APP_PBC_SCORE) {
-        this.FIRST_APP_PBC_SCORE = FIRST_APP_PBC_SCORE;
-    }
-
-    public List<BlazeApCuProd> getBlazeApCuProd() {
-        return blazeApCuProd;
-    }
-
-    public void setBlazeApCuProd(List<BlazeApCuProd> blazeApCuProd) {
-        this.blazeApCuProd = blazeApCuProd;
     }
 }
