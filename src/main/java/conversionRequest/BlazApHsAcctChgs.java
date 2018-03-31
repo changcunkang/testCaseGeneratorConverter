@@ -14,14 +14,14 @@ public class BlazApHsAcctChgs {
     private String APP_LIMIT_CH;
     private Integer APP_LIMIT;
     private Integer APP_LIMIT_RLT;
-    private Integer CHGA_TYPE;
+    private String CHGA_TYPE;
     private Integer LIMIT_CHWAY;
     private Integer LIMIT_T;
     private Integer CHGA_DATE;
-    private Double CHGA_AFTER_VALUE;
+    private Integer CHGA_AFTER_VALUE;
     private Integer CHGA_BEG_DT;
     private Integer CHGA_END_DT;
-    private Double CHGA_BEFOR_VALUE;
+    private Integer CHGA_BEFOR_VALUE;
     private Date MYETL_DATE;
 
     public String getCUSTR_NBR() {
@@ -80,11 +80,11 @@ public class BlazApHsAcctChgs {
         this.APP_LIMIT_RLT = APP_LIMIT_RLT;
     }
 
-    public Integer getCHGA_TYPE() {
+    public String getCHGA_TYPE() {
         return CHGA_TYPE;
     }
 
-    public void setCHGA_TYPE(Integer CHGA_TYPE) {
+    public void setCHGA_TYPE(String CHGA_TYPE) {
         this.CHGA_TYPE = CHGA_TYPE;
     }
 
@@ -112,11 +112,11 @@ public class BlazApHsAcctChgs {
         this.CHGA_DATE = CHGA_DATE;
     }
 
-    public Double getCHGA_AFTER_VALUE() {
+    public Integer getCHGA_AFTER_VALUE() {
         return CHGA_AFTER_VALUE;
     }
 
-    public void setCHGA_AFTER_VALUE(Double CHGA_AFTER_VALUE) {
+    public void setCHGA_AFTER_VALUE(Integer CHGA_AFTER_VALUE) {
         this.CHGA_AFTER_VALUE = CHGA_AFTER_VALUE;
     }
 
@@ -136,11 +136,11 @@ public class BlazApHsAcctChgs {
         this.CHGA_END_DT = CHGA_END_DT;
     }
 
-    public Double getCHGA_BEFOR_VALUE() {
+    public Integer getCHGA_BEFOR_VALUE() {
         return CHGA_BEFOR_VALUE;
     }
 
-    public void setCHGA_BEFOR_VALUE(Double CHGA_BEFOR_VALUE) {
+    public void setCHGA_BEFOR_VALUE(Integer CHGA_BEFOR_VALUE) {
         this.CHGA_BEFOR_VALUE = CHGA_BEFOR_VALUE;
     }
 
