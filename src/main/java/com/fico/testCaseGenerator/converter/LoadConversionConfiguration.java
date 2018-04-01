@@ -87,7 +87,7 @@ public class LoadConversionConfiguration {
                     }
 
 
-                    for (int r = 2; r <= sheet.getLastRowNum(); r++) {
+                    for (int r = 1; r <= sheet.getLastRowNum(); r++) {
                         HSSFRow row = (HSSFRow) sheet.getRow(r);
                         LoadConversion loadConversion = new LoadConversion();
                         for (int c = 0; c < row.getLastCellNum(); c++) {
