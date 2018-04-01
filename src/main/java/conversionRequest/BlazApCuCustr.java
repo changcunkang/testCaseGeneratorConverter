@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="BLAZE_AP_CU_CUSTR")
+@Table(name="BLAZ_AP_CU_CUSTR")
 public class BlazApCuCustr {
 
     @Id
