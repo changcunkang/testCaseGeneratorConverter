@@ -1,18 +1,45 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="BLAZ_AP_CU_QUERY_DETAIL")
 public class BlazApCuQueryDetail {
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column
+    private Long id;
+    @Column(name = "P_ID")
     private String P_ID;
+    @Column(name = "REPORT_ID")
     private String REPORT_ID;
+    @Column(name = "SN")
     private String SN;
+    @Column(name = "QUERY_DATE")
     private Date QUERY_DATE;
+    @Column(name = "QUERY_USER")
     private String QUERY_USER;
+    @Column(name = "QUERY_REASON")
     private String QUERY_REASON;
+    @Column
+    private Long parent_id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
 
     public String getP_ID() {
         return P_ID;

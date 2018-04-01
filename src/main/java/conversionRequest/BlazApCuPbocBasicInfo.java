@@ -1,74 +1,157 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="BLAZ_AP_CU_PBOC_BASIC_INFO")
 public class BlazApCuPbocBasicInfo {
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column
+    private Long id;
+    @Column(name = "REPORT_ID")
     private String REPORT_ID;
+    @Column(name = "CERTYPE")
     private String CERTYPE;
+    @Column(name = "CERCODE")
     private String CERCODE;
+    @Column(name = "REQUEST_TIME")
     private Date REQUEST_TIME;
+    @Column(name = "REPORT_TIME")
     private Date REPORT_TIME;
+    @Column(name = "SEX")
     private String SEX;
+    @Column(name = "BIRTH")
     private Date BIRTH;
+    @Column(name = "MARRIAGE")
     private String MARRIAGE;
+    @Column(name = "TELEPHONE")
     private String TELEPHONE;
+    @Column(name = "EDUCATION")
     private String EDUCATION;
+    @Column(name = "SCORE")
     private Integer SCORE;
+    @Column(name = "HOUSE_LOAD_NUM")
     private Integer HOUSE_LOAD_NUM;
+    @Column(name = "BUS_HOUSELOAD_NUM")
     private Integer BUS_HOUSELOAD_NUM;
+    @Column(name = "OTHER_LOAD_NUM")
     private Integer OTHER_LOAD_NUM;
+    @Column(name = "FIRST_LOAD_MONTH")
     private String FIRST_LOAD_MONTH;
+    @Column(name = "CREDIT_ACCOUNTS")
     private Integer CREDIT_ACCOUNTS;
+    @Column(name = "FIRST_CREDIT_MONTH")
     private String FIRST_CREDIT_MONTH;
+    @Column(name = "NEARCREDITCARD_ACCOUNTS")
     private Integer NEARCREDITCARD_ACCOUNTS;
+    @Column(name = "FIRST_NEARCREDIT_MONTH")
     private String FIRST_NEARCREDIT_MONTH;
+    @Column(name = "BAD_DEBTS_NUM")
     private Integer BAD_DEBTS_NUM;
+    @Column(name = "ASSETS_NUM")
     private Integer ASSETS_NUM;
+    @Column(name = "SPONSORIAL_NUM")
     private Integer SPONSORIAL_NUM;
+    @Column(name = "BAD_DEBTS_REMAIN")
     private Integer BAD_DEBTS_REMAIN;
+    @Column(name = "ASSETS_REMAIN")
     private Integer ASSETS_REMAIN;
+    @Column(name = "SPONSORIAL_REMAIN")
     private Integer SPONSORIAL_REMAIN;
+    @Column(name = "LOAD_OVERDUE_NUM")
     private Integer LOAD_OVERDUE_NUM;
+    @Column(name = "CREDIT_OVERDUE_ACCOUNTS")
     private Integer CREDIT_OVERDUE_ACCOUNTS;
+    @Column(name = "NEARCREDIT_60D_ACCOUNTS")
     private Integer NEARCREDIT_60D_ACCOUNTS;
+    @Column(name = "LOAD_OVERDUE_MONTHS")
     private Integer LOAD_OVERDUE_MONTHS;
+    @Column(name = "CREDIT_OVERDUE_MONTHS")
     private Integer CREDIT_OVERDUE_MONTHS;
+    @Column(name = "NEARCREDIT_60D_MONTHS")
     private Integer NEARCREDIT_60D_MONTHS;
+    @Column(name = "LOAD_OVERDUE_MAX_SUM")
     private Integer LOAD_OVERDUE_MAX_SUM;
+    @Column(name = "CREDIT_OVERDUE_MAX_SUM")
     private Integer CREDIT_OVERDUE_MAX_SUM;
+    @Column(name = "NEARCREDIT_60D_MAX_SUM")
     private Integer NEARCREDIT_60D_MAX_SUM;
+    @Column(name = "LOAD_OVERDUE_MAX_MONTH")
     private Integer LOAD_OVERDUE_MAX_MONTH;
+    @Column(name = "CREDIT_OVERDUE_MAX_MONTH")
     private Integer CREDIT_OVERDUE_MAX_MONTH;
+    @Column(name = "NEARCREDIT_60D_MAX_MONTH")
     private Integer NEARCREDIT_60D_MAX_MONTH;
+    @Column(name = "LOAD_CORPORATION_NUM")
     private Integer LOAD_CORPORATION_NUM;
+    @Column(name = "LOAD_ORGANIZATION_NUM")
     private Integer LOAD_ORGANIZATION_NUM;
+    @Column(name = "LOAD_NUM")
     private Integer LOAD_NUM;
+    @Column(name = "LOAD_CONTRACT_SUM")
     private Integer LOAD_CONTRACT_SUM;
+    @Column(name = "LOAD_REMAIN")
     private Integer LOAD_REMAIN;
+    @Column(name = "LOAD_LAST6M_REPAY")
     private Integer LOAD_LAST6M_REPAY;
+    @Column(name = "CRED_ISSUING_CORPORATION_NUM")
     private Integer CRED_ISSUING_CORPORATION_NUM;
+    @Column(name = "CRED_ISSUING_ORGANIZATION_NUM")
     private Integer CRED_ISSUING_ORGANIZATION_NUM;
+    @Column(name = "CRED_ACCOUNTS")
     private Integer CRED_ACCOUNTS;
+    @Column(name = "CRED_EXTENSION_SUM")
     private Integer CRED_EXTENSION_SUM;
+    @Column(name = "CRED_SINGLE_MAX_EXTENSION")
     private Integer CRED_SINGLE_MAX_EXTENSION;
+    @Column(name = "CRED_SINGLE_MIN_EXTENSION")
     private Integer CRED_SINGLE_MIN_EXTENSION;
+    @Column(name = "CRED_USED_EXTENSION")
     private Integer CRED_USED_EXTENSION;
+    @Column(name = "CRED_LAST6M_AVG_USEDEXTENSION")
     private Integer CRED_LAST6M_AVG_USEDEXTENSION;
+    @Column(name = "SCRED_ISSUING_CORPORATION_NUM")
     private Integer SCRED_ISSUING_CORPORATION_NUM;
+    @Column(name = "SCRED_ISSUING_ORGANIZATION_NUM")
     private Integer SCRED_ISSUING_ORGANIZATION_NUM;
+    @Column(name = "SCRED_ACCOUNTS")
     private Integer SCRED_ACCOUNTS;
+    @Column(name = "SCRED_EXTENSION_SUM")
     private Integer SCRED_EXTENSION_SUM;
+    @Column(name = "SCRED_SINGLE_MAX_EXTENSION")
     private Integer SCRED_SINGLE_MAX_EXTENSION;
+    @Column(name = "SCRED_SINGLE_MIN_EXTENSION")
     private Integer SCRED_SINGLE_MIN_EXTENSION;
+    @Column(name = "SCRED_USED_EXTENSION")
     private Integer SCRED_USED_EXTENSION;
+    @Column(name = "SCRED_LAST6M_AVG_USEDEXTENSION")
     private Integer SCRED_LAST6M_AVG_USEDEXTENSION;
+    @Column(name = "SECURED_NUM")
     private Integer SECURED_NUM;
+    @Column(name = "SECERED_MONEY")
     private Integer SECERED_MONEY;
+    @Column(name = "SECERED_CAPITAL")
     private Integer SECERED_CAPITAL;
+    @Column
+    private Long parent_id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
 
     public String getREPORT_ID() {
         return REPORT_ID;

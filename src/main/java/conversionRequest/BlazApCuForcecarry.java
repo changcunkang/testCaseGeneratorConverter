@@ -1,25 +1,59 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="BLAZ_AP_CU_FORCECARRY")
 public class BlazApCuForcecarry {
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column
+    private Long id;
+    @Column(name="P_ID")
     private String P_ID;
+    @Column(name="F_ID")
     private String F_ID;
+    @Column(name="SN")
     private String SN;
+    @Column(name="COURT")
     private String COURT;
+    @Column(name="REASON")
     private String REASON;
+    @Column(name="REGESTER_DATE")
     private Date REGESTER_DATE;
+    @Column(name="END_WAY")
     private String END_WAY;
+    @Column(name="CASE_STATUS")
     private String CASE_STATUS;
+    @Column(name="END_DATE")
     private Date END_DATE;
+    @Column(name="CASE_OBJECT")
     private String CASE_OBJECT;
+    @Column(name="CASE_OBJECT_AMOUNT")
     private Integer CASE_OBJECT_AMOUNT;
+    @Column(name="HAD_OBJECT")
     private String HAD_OBJECT;
+    @Column(name="HAD_OBJECT_AMOUNT")
     private Integer HAD_OBJECT_AMOUNT;
+    @Column
+    private Long parent_id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
 
     public String getP_ID() {
         return P_ID;

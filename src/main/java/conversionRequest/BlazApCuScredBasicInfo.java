@@ -1,33 +1,75 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="BLAZ_AP_CU_SCRED_BASIC_INFO")
 public class BlazApCuScredBasicInfo {
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column
+    private Long id;
+    @Column(name = "P_ID")
     private String P_ID;
+    @Column(name = "F_ID")
     private String F_ID;
+    @Column(name = "CREDIT_STATUS")
     private String CREDIT_STATUS;
+    @Column(name = "ORGANIZATION_NAME")
     private String ORGANIZATION_NAME;
+    @Column(name = "BUSINESS_SN")
     private String BUSINESS_SN;
+    @Column(name = "CURRENCY")
     private String CURRENCY;
+    @Column(name = "BEG_DATE")
     private Date BEG_DATE;
+    @Column(name = "EXTENSION")
     private Integer EXTENSION;
+    @Column(name = "BONDS_TYPE")
     private String BONDS_TYPE;
+    @Column(name = "UPDATE_DATE")
     private Date UPDATE_DATE;
+    @Column(name = "EXTENSION_SHARE")
     private Integer EXTENSION_SHARE;
+    @Column(name = "REMAIN")
     private Integer REMAIN;
+    @Column(name = "LAST_6MONTH_AVG")
     private Integer LAST_6MONTH_AVG;
+    @Column(name = "MAX_USED_AMOUNT")
     private Integer MAX_USED_AMOUNT;
+    @Column(name = "BILL_DATE")
     private Date BILL_DATE;
+    @Column(name = "REPAYED_AT_MONTH")
     private Integer REPAYED_AT_MONTH;
+    @Column(name = "LAST_REPAY_DATE")
     private Date LAST_REPAY_DATE;
+    @Column(name = "OVERDUE_180D_AMOUNT")
     private Integer OVERDUE_180D_AMOUNT;
+    @Column(name = "BEG_YEAR_MONTH")
     private String BEG_YEAR_MONTH;
+    @Column(name = "END_YEAR_MONTH")
     private String END_YEAR_MONTH;
+    @Column(name = "MONTH_24STATUS")
     private String MONTH_24STATUS;
+    @Column
+    private Long parent_id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
 
     public String getP_ID() {
         return P_ID;

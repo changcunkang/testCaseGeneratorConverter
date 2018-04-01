@@ -1,22 +1,51 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="BLAZ_AP_CU_PUNISH")
 public class BlazApCuPunish {
-
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column
+    private Long id;
+    @Column(name="P_ID")
     private String P_ID;
+    @Column(name="F_ID")
     private String F_ID;
+    @Column(name="SN")
     private String SN;
+    @Column(name="ORGANIZATION")
     private String ORGANIZATION;
+    @Column(name="PUNISH_CONTENT")
     private String PUNISH_CONTENT;
+    @Column(name="PUNISH_AMOUNT")
     private String PUNISH_AMOUNT;
+    @Column(name="EFFECTIVE_DATE")
     private Date EFFECTIVE_DATE;
+    @Column(name="END_DATE")
     private Date END_DATE;
+    @Column(name="RECONSIDER_RESULT")
     private String RECONSIDER_RESULT;
+    @Column
+    private Long parent_id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
 
     public String getP_ID() {
         return P_ID;

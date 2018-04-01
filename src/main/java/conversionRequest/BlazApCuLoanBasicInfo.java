@@ -1,42 +1,93 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="BLAZ_AP_CU_LOAN_BASIC_INFO")
 public class BlazApCuLoanBasicInfo {
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column
+    private Long id;
+    @Column(name = "P_ID")
     private String P_ID;
+    @Column(name = "F_ID")
     private String F_ID;
+    @Column(name = "LOAD_STATUS")
     private String LOAD_STATUS;
+    @Column(name = "ORGANIZATION_NAME")
     private String ORGANIZATION_NAME;
+    @Column(name = "BUSINESS_SN")
     private String BUSINESS_SN;
+    @Column(name = "LOAD_TYPE")
     private String LOAD_TYPE;
+    @Column(name = "CURRENCY")
     private String CURRENCY;
+    @Column(name = "BEG_DATE")
     private Date BEG_DATE;
+    @Column(name = "END_DATE")
     private Date END_DATE;
+    @Column(name = "LOAD_AMOUNT")
     private Double LOAD_AMOUNT;
+    @Column(name = "BONDS_TYPE")
     private String BONDS_TYPE;
+    @Column(name = "REPAY_WAY")
     private String REPAY_WAY;
+    @Column(name = "LOAD_PERIODS")
     private String LOAD_PERIODS;
+    @Column(name = "UPDATE_DATE")
     private Date UPDATE_DATE;
+    @Column(name = "FIVE_STYLE")
     private String FIVE_STYLE;
+    @Column(name = "BASIC_LOAD_AMOUNT")
     private Double BASIC_LOAD_AMOUNT;
+    @Column(name = "REMAIN_LOAD_PERIODS")
     private Integer REMAIN_LOAD_PERIODS;
+    @Column(name = "REPAY_AT_MONTH")
     private Double REPAY_AT_MONTH;
+    @Column(name = "NEED_REPAY_DATE")
     private Date NEED_REPAY_DATE;
+    @Column(name = "REPAYED_AT_MONTH")
     private Double REPAYED_AT_MONTH;
+    @Column(name = "LAST_REPAY_DATE")
     private Date LAST_REPAY_DATE;
+    @Column(name = "OVERDUE_PERIODS")
     private Integer OVERDUE_PERIODS;
+    @Column(name = "OVERDUE_AMOUNT")
     private Double OVERDUE_AMOUNT;
+    @Column(name = "OVERDUE_3160_AMOUNT")
     private Double OVERDUE_3160_AMOUNT;
+    @Column(name = "OVERDUE_6190_AMOUNT")
     private Double OVERDUE_6190_AMOUNT;
+    @Column(name = "OVERDUE_91180_AMOUNT")
     private Double OVERDUE_91180_AMOUNT;
+    @Column(name = "OVERDUE_180_AMOUNT")
     private Double OVERDUE_180_AMOUNT;
+    @Column(name = "BEG_YEAR_MONTH")
     private String BEG_YEAR_MONTH;
+    @Column(name = "END_YEAR_MONTH")
     private String END_YEAR_MONTH;
+    @Column(name = "MONTH_24STATUS")
     private String MONTH_24STATUS;
+    @Column
+    private Long parent_id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
 
     public String getP_ID() {
         return P_ID;

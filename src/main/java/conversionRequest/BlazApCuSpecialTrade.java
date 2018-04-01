@@ -1,20 +1,49 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="BLAZ_AP_CU_SPECIAL_TRADE")
 public class BlazApCuSpecialTrade {
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column
+    private Long id;
+    @Column(name = "P_ID")
     private String P_ID;
+    @Column(name = "F_ID")
     private String F_ID;
+    @Column(name = "SPECIAL_TRADE_TYPE")
     private String SPECIAL_TRADE_TYPE;
+    @Column(name = "HAPPEN_DATE")
     private Date HAPPEN_DATE;
+    @Column(name = "CHANGE_MONTHS")
     private Integer CHANGE_MONTHS;
+    @Column(name = "CHANGE_AMOUNT")
     private Integer CHANGE_AMOUNT;
+    @Column(name = "DETAIL")
     private String DETAIL;
+    @Column(name = "REPORT_ID")
     private String REPORT_ID;
+    @Column
+    private Long parent_id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getP_ID() {
         return P_ID;

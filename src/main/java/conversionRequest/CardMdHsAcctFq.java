@@ -10,8 +10,6 @@ public class CardMdHsAcctFq {
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     @Column
     private Long id;
-    @Column
-    private Long parent_id;
     @Column(name = "XACCOUNT")
     private String XACCOUNT;
     @Column(name = "CUSTR_NBR")
@@ -59,13 +57,6 @@ public class CardMdHsAcctFq {
         this.id = id;
     }
 
-    public Long getParent_id() {
-        return parent_id;
-    }
-
-    public void setParent_id(Long parent_id) {
-        this.parent_id = parent_id;
-    }
 
     public String getXACCOUNT() {
         return XACCOUNT;

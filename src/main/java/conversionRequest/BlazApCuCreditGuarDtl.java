@@ -1,21 +1,51 @@
 package conversionRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="BLAZ_AP_CU_CREDIT_GUAR_DTL")
 public class BlazApCuCreditGuarDtl {
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column
+    private Long id;
+    @Column(name="P_ID")
     private String P_ID;
+    @Column(name="F_ID")
     private String F_ID;
+    @Column(name="SN")
     private String SN;
+    @Column(name="ORGANIZATION")
     private String ORGANIZATION;
+    @Column(name="CONTRACT_AMOUNT")
     private Integer CONTRACT_AMOUNT;
+    @Column(name="ISSUE_DATE")
     private Date ISSUE_DATE;
+    @Column(name="BONDS_AMOUNT")
     private Integer BONDS_AMOUNT;
+    @Column(name="USED_AMOUNT")
     private Integer USED_AMOUNT;
+    @Column(name="BILL_DATE")
     private Date BILL_DATE;
+    @Column
+    private Long parent_id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
 
     public String getP_ID() {
         return P_ID;

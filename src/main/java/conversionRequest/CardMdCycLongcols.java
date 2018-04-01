@@ -8,7 +8,7 @@ import java.util.Date;
 public class CardMdCycLongcols {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    @Column(name ="XACCOUNT")
+    @Column
     private Long id;
     @Column
     private Long parent_id;
@@ -30,8 +30,8 @@ public class CardMdCycLongcols {
     private Integer FQ_TYPE;
     @Column(name ="MYETL_DATE")
     private Date MYETL_DATE;
-    @Column(name = "ID")
-    private String ID;
+//    @Column(name = "ID")
+//    private String ID;
 
     public Long getId() {
         return id;
@@ -39,14 +39,6 @@ public class CardMdCycLongcols {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getID() {
-        return ID;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
     }
 
     public Long getParent_id() {

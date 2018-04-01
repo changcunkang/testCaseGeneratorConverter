@@ -77,7 +77,6 @@ public class BlazApCycAcctState {
     @Column(name="IS_ZDFQ_INCYC")
     private Integer IS_ZDFQ_INCYC;
     @Column(name="INP_CASH_AMT")
-
     private Integer INP_CASH_AMT;
     @Column(name="INT_AMT")
     private Integer INT_AMT;

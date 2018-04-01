@@ -73,7 +73,7 @@ public class BlazApCuAcct {
     private  Long parent_id;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private List<CardMdHsAcctFq> cardMdHsAcctFq=new ArrayList<CardMdHsAcctFq>();
+    private CardMdHsAcctFq cardMdHsAcctFq=new CardMdHsAcctFq();
     @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinColumn(name="parent_id")
     private List<BlazApHsAcctChgs> blazApHsAcctChgs=new ArrayList<BlazApHsAcctChgs>();
@@ -316,11 +316,19 @@ public class BlazApCuAcct {
         this.MYETL_DATE = MYETL_DATE;
     }
 
-    public List<CardMdHsAcctFq> getCardMdHsAcctFq() {
+    public Long getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(Long parent_id) {
+        this.parent_id = parent_id;
+    }
+
+    public CardMdHsAcctFq getCardMdHsAcctFq() {
         return cardMdHsAcctFq;
     }
 
-    public void setCardMdHsAcctFq(List<CardMdHsAcctFq> cardMdHsAcctFq) {
+    public void setCardMdHsAcctFq(CardMdHsAcctFq cardMdHsAcctFq) {
         this.cardMdHsAcctFq = cardMdHsAcctFq;
     }
 
