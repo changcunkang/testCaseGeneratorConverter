@@ -261,7 +261,7 @@ public class TestDataConvertProcessor {
                 }
             }
             else {
-                if( ! isBasicType( field.getType()) ){
+                if( ! isBasicType( field.getType()) && field.getType() == childCls ){
                     field.setAccessible(true);
                     field.set(parentObj, newTargetObj);
                 }
