@@ -72,8 +72,9 @@ public class BlazApCuAcct {
     @Column
     private  Long parent_id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private CardMdHsAcctFq cardMdHsAcctFq=new CardMdHsAcctFq();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<CardMdHsAcctFq> cardMdHsAcctFq=new ArrayList<CardMdHsAcctFq>();
     @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinColumn(name="parent_id")
     private List<BlazApHsAcctChgs> blazApHsAcctChgs=new ArrayList<BlazApHsAcctChgs>();
@@ -324,11 +325,11 @@ public class BlazApCuAcct {
         this.parent_id = parent_id;
     }
 
-    public CardMdHsAcctFq getCardMdHsAcctFq() {
+    public List<CardMdHsAcctFq> getCardMdHsAcctFq() {
         return cardMdHsAcctFq;
     }
 
-    public void setCardMdHsAcctFq(CardMdHsAcctFq cardMdHsAcctFq) {
+    public void setCardMdHsAcctFq(List<CardMdHsAcctFq> cardMdHsAcctFq) {
         this.cardMdHsAcctFq = cardMdHsAcctFq;
     }
 
