@@ -142,14 +142,14 @@ public class ConversionFunction {
                         count = application.getCustomer().getPbocReport().get(0).getFellbackSum().get(0).getCount();
                         balance = application.getCustomer().getPbocReport().get(0).getFellbackSum().get(0).getBalance();
                         if (cd.contains("呆账")) {
-                            blazApCuCustr.getBlazApCuPbocBasicInfo().setBAD_DEBTS_NUM(count);
-                            blazApCuCustr.getBlazApCuPbocBasicInfo().setBAD_DEBTS_REMAIN(balance);
+                            blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setBAD_DEBTS_NUM(count);
+                            blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setBAD_DEBTS_REMAIN(balance);
                         } else if (cd.contains("资产处置")) {
-                            blazApCuCustr.getBlazApCuPbocBasicInfo().setASSETS_NUM(count);
-                            blazApCuCustr.getBlazApCuPbocBasicInfo().setASSETS_REMAIN(balance);
+                            blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setASSETS_NUM(count);
+                            blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setASSETS_REMAIN(balance);
                         } else if (cd.contains("保证人代偿")) {
-                            blazApCuCustr.getBlazApCuPbocBasicInfo().setSPONSORIAL_NUM(count);
-                            blazApCuCustr.getBlazApCuPbocBasicInfo().setSPONSORIAL_REMAIN(balance);
+                            blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setSPONSORIAL_NUM(count);
+                            blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setSPONSORIAL_REMAIN(balance);
                         }
 
                     }
@@ -179,20 +179,20 @@ public class ConversionFunction {
                     highestOverdueAmountPerMon = application.getCustomer().getPbocReport().get(0).getOverdueSum().get(i).getHighestOverdueAmountPerMon();
                     maxDuration = application.getCustomer().getPbocReport().get(0).getOverdueSum().get(i).getMaxDuration();
                     if (cd.contains("贷款逾期")) {
-                        blazApCuCustr.getBlazApCuPbocBasicInfo().setLOAD_OVERDUE_NUM(count);
-                        blazApCuCustr.getBlazApCuPbocBasicInfo().setLOAD_OVERDUE_MONTHS(month);
-                        blazApCuCustr.getBlazApCuPbocBasicInfo().setLOAD_OVERDUE_MAX_SUM(highestOverdueAmountPerMon);
-                        blazApCuCustr.getBlazApCuPbocBasicInfo().setLOAD_OVERDUE_MAX_MONTH(maxDuration);
+                        blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setLOAD_OVERDUE_NUM(count);
+                        blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setLOAD_OVERDUE_MONTHS(month);
+                        blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setLOAD_OVERDUE_MAX_SUM(highestOverdueAmountPerMon);
+                        blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setLOAD_OVERDUE_MAX_MONTH(maxDuration);
                     } else if (cd.contains("贷记卡逾期")) {
-                        blazApCuCustr.getBlazApCuPbocBasicInfo().setCREDIT_OVERDUE_ACCOUNTS(count);
-                        blazApCuCustr.getBlazApCuPbocBasicInfo().setCREDIT_OVERDUE_MONTHS(month);
-                        blazApCuCustr.getBlazApCuPbocBasicInfo().setCREDIT_OVERDUE_MAX_SUM(highestOverdueAmountPerMon);
-                        blazApCuCustr.getBlazApCuPbocBasicInfo().setCREDIT_OVERDUE_MAX_MONTH(maxDuration);
+                        blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setCREDIT_OVERDUE_ACCOUNTS(count);
+                        blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setCREDIT_OVERDUE_MONTHS(month);
+                        blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setCREDIT_OVERDUE_MAX_SUM(highestOverdueAmountPerMon);
+                        blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setCREDIT_OVERDUE_MAX_MONTH(maxDuration);
                     } else if (cd.contains("准贷记卡")) {
-                        blazApCuCustr.getBlazApCuPbocBasicInfo().setNEARCREDIT_60D_ACCOUNTS(count);
-                        blazApCuCustr.getBlazApCuPbocBasicInfo().setNEARCREDIT_60D_MONTHS(month);
-                        blazApCuCustr.getBlazApCuPbocBasicInfo().setNEARCREDIT_60D_MAX_SUM(highestOverdueAmountPerMon);
-                        blazApCuCustr.getBlazApCuPbocBasicInfo().setNEARCREDIT_60D_MAX_MONTH(maxDuration);
+                        blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setNEARCREDIT_60D_ACCOUNTS(count);
+                        blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setNEARCREDIT_60D_MONTHS(month);
+                        blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setNEARCREDIT_60D_MAX_SUM(highestOverdueAmountPerMon);
+                        blazApCuCustr.getBlazApCuPbocBasicInfo().get(0).setNEARCREDIT_60D_MAX_MONTH(maxDuration);
                     }
 
                 }
