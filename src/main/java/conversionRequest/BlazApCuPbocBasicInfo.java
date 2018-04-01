@@ -1,7 +1,9 @@
 package conversionRequest;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="BLAZ_AP_CU_PBOC_BASIC_INFO")
@@ -55,11 +57,11 @@ public class BlazApCuPbocBasicInfo {
     @Column(name = "SPONSORIAL_NUM")
     private Integer SPONSORIAL_NUM;
     @Column(name = "BAD_DEBTS_REMAIN")
-    private Integer BAD_DEBTS_REMAIN;
+    private Double BAD_DEBTS_REMAIN;
     @Column(name = "ASSETS_REMAIN")
-    private Integer ASSETS_REMAIN;
+    private Double ASSETS_REMAIN;
     @Column(name = "SPONSORIAL_REMAIN")
-    private Integer SPONSORIAL_REMAIN;
+    private Double SPONSORIAL_REMAIN;
     @Column(name = "LOAD_OVERDUE_NUM")
     private Integer LOAD_OVERDUE_NUM;
     @Column(name = "CREDIT_OVERDUE_ACCOUNTS")
@@ -73,11 +75,11 @@ public class BlazApCuPbocBasicInfo {
     @Column(name = "NEARCREDIT_60D_MONTHS")
     private Integer NEARCREDIT_60D_MONTHS;
     @Column(name = "LOAD_OVERDUE_MAX_SUM")
-    private Integer LOAD_OVERDUE_MAX_SUM;
+    private Double LOAD_OVERDUE_MAX_SUM;
     @Column(name = "CREDIT_OVERDUE_MAX_SUM")
-    private Integer CREDIT_OVERDUE_MAX_SUM;
+    private Double CREDIT_OVERDUE_MAX_SUM;
     @Column(name = "NEARCREDIT_60D_MAX_SUM")
-    private Integer NEARCREDIT_60D_MAX_SUM;
+    private Double NEARCREDIT_60D_MAX_SUM;
     @Column(name = "LOAD_OVERDUE_MAX_MONTH")
     private Integer LOAD_OVERDUE_MAX_MONTH;
     @Column(name = "CREDIT_OVERDUE_MAX_MONTH")
@@ -136,6 +138,157 @@ public class BlazApCuPbocBasicInfo {
     private Integer SECERED_CAPITAL;
     @Column
     private Long parent_id;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuCredBasicInfo> blazApCuCredBasicInfo=new ArrayList<BlazApCuCredBasicInfo>();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuScredBasicInfo> blazApCuScredBasicInfo=new ArrayList<BlazApCuScredBasicInfo>();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuLoanBasicInfo> blazApCuLoanBasicInfo=new ArrayList<BlazApCuLoanBasicInfo>();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuHouseprovident> blazApCuHouseprovident=new ArrayList<BlazApCuHouseprovident>();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuAssetDetail> blazApCuAssetDetail=new ArrayList<BlazApCuAssetDetail>();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuSponsorialDtl> blazApCuSponsorialDtl=new ArrayList<BlazApCuSponsorialDtl>();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuForcecarry> blazApCuForcecarry=new ArrayList<BlazApCuForcecarry>();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuPunish> blazApCuPunish=new ArrayList<BlazApCuPunish>();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuQueryDetail> blazApCuQueryDetail=new ArrayList<BlazApCuQueryDetail>();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuLoadGuarDtl> blazApCuLoadGuarDtl=new ArrayList<BlazApCuLoadGuarDtl>();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuCreditGuarDtl> blazApCuCreditGuarDtl=new ArrayList<BlazApCuCreditGuarDtl>();
+
+
+    public List<BlazApCuScredBasicInfo> getBlazApCuScredBasicInfo() {
+        return blazApCuScredBasicInfo;
+    }
+
+    public void setBlazApCuScredBasicInfo(List<BlazApCuScredBasicInfo> blazApCuScredBasicInfo) {
+        this.blazApCuScredBasicInfo = blazApCuScredBasicInfo;
+    }
+
+    public List<BlazApCuLoanBasicInfo> getBlazApCuLoanBasicInfo() {
+        return blazApCuLoanBasicInfo;
+    }
+
+    public void setBlazApCuLoanBasicInfo(List<BlazApCuLoanBasicInfo> blazApCuLoanBasicInfo) {
+        this.blazApCuLoanBasicInfo = blazApCuLoanBasicInfo;
+    }
+
+    public List<BlazApCuHouseprovident> getBlazApCuHouseprovident() {
+        return blazApCuHouseprovident;
+    }
+
+    public void setBlazApCuHouseprovident(List<BlazApCuHouseprovident> blazApCuHouseprovident) {
+        this.blazApCuHouseprovident = blazApCuHouseprovident;
+    }
+
+    public List<BlazApCuAssetDetail> getBlazApCuAssetDetail() {
+        return blazApCuAssetDetail;
+    }
+
+    public void setBlazApCuAssetDetail(List<BlazApCuAssetDetail> blazApCuAssetDetail) {
+        this.blazApCuAssetDetail = blazApCuAssetDetail;
+    }
+
+    public List<BlazApCuSponsorialDtl> getBlazApCuSponsorialDtl() {
+        return blazApCuSponsorialDtl;
+    }
+
+    public void setBlazApCuSponsorialDtl(List<BlazApCuSponsorialDtl> blazApCuSponsorialDtl) {
+        this.blazApCuSponsorialDtl = blazApCuSponsorialDtl;
+    }
+
+    public List<BlazApCuForcecarry> getBlazApCuForcecarry() {
+        return blazApCuForcecarry;
+    }
+
+    public void setBlazApCuForcecarry(List<BlazApCuForcecarry> blazApCuForcecarry) {
+        this.blazApCuForcecarry = blazApCuForcecarry;
+    }
+
+    public List<BlazApCuPunish> getBlazApCuPunish() {
+        return blazApCuPunish;
+    }
+
+    public void setBlazApCuPunish(List<BlazApCuPunish> blazApCuPunish) {
+        this.blazApCuPunish = blazApCuPunish;
+    }
+
+    public List<BlazApCuQueryDetail> getBlazApCuQueryDetail() {
+        return blazApCuQueryDetail;
+    }
+
+    public void setBlazApCuQueryDetail(List<BlazApCuQueryDetail> blazApCuQueryDetail) {
+        this.blazApCuQueryDetail = blazApCuQueryDetail;
+    }
+
+    public List<BlazApCuLoadGuarDtl> getBlazApCuLoadGuarDtl() {
+        return blazApCuLoadGuarDtl;
+    }
+
+    public void setBlazApCuLoadGuarDtl(List<BlazApCuLoadGuarDtl> blazApCuLoadGuarDtl) {
+        this.blazApCuLoadGuarDtl = blazApCuLoadGuarDtl;
+    }
+
+    public List<BlazApCuCreditGuarDtl> getBlazApCuCreditGuarDtl() {
+        return blazApCuCreditGuarDtl;
+    }
+
+    public void setBlazApCuCreditGuarDtl(List<BlazApCuCreditGuarDtl> blazApCuCreditGuarDtl) {
+        this.blazApCuCreditGuarDtl = blazApCuCreditGuarDtl;
+    }
+
+    public List<BlazApCuCredBasicInfo> getBlazApCuCredBasicInfo() {
+        return blazApCuCredBasicInfo;
+    }
+
+    public void setBlazApCuCredBasicInfo(List<BlazApCuCredBasicInfo> blazApCuCredBasicInfo) {
+        this.blazApCuCredBasicInfo = blazApCuCredBasicInfo;
+    }
+
+    public Double getLOAD_OVERDUE_MAX_SUM() {
+        return LOAD_OVERDUE_MAX_SUM;
+    }
+
+    public void setLOAD_OVERDUE_MAX_SUM(Double LOAD_OVERDUE_MAX_SUM) {
+        this.LOAD_OVERDUE_MAX_SUM = LOAD_OVERDUE_MAX_SUM;
+    }
+
+    public Double getBAD_DEBTS_REMAIN() {
+        return BAD_DEBTS_REMAIN;
+    }
+
+    public void setBAD_DEBTS_REMAIN(Double BAD_DEBTS_REMAIN) {
+        this.BAD_DEBTS_REMAIN = BAD_DEBTS_REMAIN;
+    }
+
+    public Double getASSETS_REMAIN() {
+        return ASSETS_REMAIN;
+    }
+
+    public void setASSETS_REMAIN(Double ASSETS_REMAIN) {
+        this.ASSETS_REMAIN = ASSETS_REMAIN;
+    }
+
+    public void setSPONSORIAL_REMAIN(Double SPONSORIAL_REMAIN) {
+        this.SPONSORIAL_REMAIN = SPONSORIAL_REMAIN;
+    }
 
     public Long getId() {
         return id;
@@ -329,30 +482,6 @@ public class BlazApCuPbocBasicInfo {
         this.SPONSORIAL_NUM = SPONSORIAL_NUM;
     }
 
-    public Integer getBAD_DEBTS_REMAIN() {
-        return BAD_DEBTS_REMAIN;
-    }
-
-    public void setBAD_DEBTS_REMAIN(Integer BAD_DEBTS_REMAIN) {
-        this.BAD_DEBTS_REMAIN = BAD_DEBTS_REMAIN;
-    }
-
-    public Integer getASSETS_REMAIN() {
-        return ASSETS_REMAIN;
-    }
-
-    public void setASSETS_REMAIN(Integer ASSETS_REMAIN) {
-        this.ASSETS_REMAIN = ASSETS_REMAIN;
-    }
-
-    public Integer getSPONSORIAL_REMAIN() {
-        return SPONSORIAL_REMAIN;
-    }
-
-    public void setSPONSORIAL_REMAIN(Integer SPONSORIAL_REMAIN) {
-        this.SPONSORIAL_REMAIN = SPONSORIAL_REMAIN;
-    }
-
     public Integer getLOAD_OVERDUE_NUM() {
         return LOAD_OVERDUE_NUM;
     }
@@ -401,27 +530,24 @@ public class BlazApCuPbocBasicInfo {
         this.NEARCREDIT_60D_MONTHS = NEARCREDIT_60D_MONTHS;
     }
 
-    public Integer getLOAD_OVERDUE_MAX_SUM() {
-        return LOAD_OVERDUE_MAX_SUM;
+    public Double getSPONSORIAL_REMAIN() {
+        return SPONSORIAL_REMAIN;
     }
 
-    public void setLOAD_OVERDUE_MAX_SUM(Integer LOAD_OVERDUE_MAX_SUM) {
-        this.LOAD_OVERDUE_MAX_SUM = LOAD_OVERDUE_MAX_SUM;
-    }
 
-    public Integer getCREDIT_OVERDUE_MAX_SUM() {
+    public Double getCREDIT_OVERDUE_MAX_SUM() {
         return CREDIT_OVERDUE_MAX_SUM;
     }
 
-    public void setCREDIT_OVERDUE_MAX_SUM(Integer CREDIT_OVERDUE_MAX_SUM) {
+    public void setCREDIT_OVERDUE_MAX_SUM(Double CREDIT_OVERDUE_MAX_SUM) {
         this.CREDIT_OVERDUE_MAX_SUM = CREDIT_OVERDUE_MAX_SUM;
     }
 
-    public Integer getNEARCREDIT_60D_MAX_SUM() {
+    public Double getNEARCREDIT_60D_MAX_SUM() {
         return NEARCREDIT_60D_MAX_SUM;
     }
 
-    public void setNEARCREDIT_60D_MAX_SUM(Integer NEARCREDIT_60D_MAX_SUM) {
+    public void setNEARCREDIT_60D_MAX_SUM(Double NEARCREDIT_60D_MAX_SUM) {
         this.NEARCREDIT_60D_MAX_SUM = NEARCREDIT_60D_MAX_SUM;
     }
 

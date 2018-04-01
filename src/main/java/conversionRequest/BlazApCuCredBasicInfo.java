@@ -1,7 +1,9 @@
 package conversionRequest;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="BLAZ_AP_CU_CRED_BASIC_INFO")
@@ -58,6 +60,29 @@ public class BlazApCuCredBasicInfo {
     private String MONTH_24STATUS;
     @Column
     private Long parent_id;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCuSpecialTrade> blazApCuSpecialTrade = new ArrayList<BlazApCuSpecialTrade>();
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="parent_id")
+    private List<BlazApCu5YearsOverdue> blazApCu5YearsOverdue=new ArrayList<BlazApCu5YearsOverdue>();
+
+    public List<BlazApCu5YearsOverdue> getBlazApCu5YearsOverdue() {
+        return blazApCu5YearsOverdue;
+    }
+
+    public void setBlazApCu5YearsOverdue(List<BlazApCu5YearsOverdue> blazApCu5YearsOverdue) {
+        this.blazApCu5YearsOverdue = blazApCu5YearsOverdue;
+    }
+
+    public List<BlazApCuSpecialTrade> getBlazApCuSpecialTrade() {
+        return blazApCuSpecialTrade;
+    }
+
+    public void setBlazApCuSpecialTrade(List<BlazApCuSpecialTrade> blazApCuSpecialTrade) {
+        this.blazApCuSpecialTrade = blazApCuSpecialTrade;
+    }
 
     public Long getId() {
         return id;

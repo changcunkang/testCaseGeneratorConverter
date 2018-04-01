@@ -111,9 +111,16 @@ public class BlazApCuCustr {
     @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinColumn(name="parent_id")
     private List<BlazApCuProd> blazApCuProd=new ArrayList<conversionRequest.BlazApCuProd>();
-//    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
-//    @JoinColumn(name="parent_id")
-//    private List<BlazApCuPbocBasicInfo> blazApCuPbocBasicInfo=new ArrayList<BlazApCuPbocBasicInfo>();
+    @OneToOne(cascade = CascadeType.ALL)
+    private BlazApCuPbocBasicInfo blazApCuPbocBasicInfo=new BlazApCuPbocBasicInfo();
+
+    public BlazApCuPbocBasicInfo getBlazApCuPbocBasicInfo() {
+        return blazApCuPbocBasicInfo;
+    }
+
+    public void setBlazApCuPbocBasicInfo(BlazApCuPbocBasicInfo blazApCuPbocBasicInfo) {
+        this.blazApCuPbocBasicInfo = blazApCuPbocBasicInfo;
+    }
 
     public List<BlazApCuProd> getBlazApCuProd() {
         return blazApCuProd;
